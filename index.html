@@ -8,6 +8,28 @@
 <meta name="apple-mobile-web-app-title" content="FitTrack">
 <meta name="theme-color" content="#0d0d0d">
 <link rel="manifest" href="manifest.json">
+<style>
+  /* Hide when not in standalone — show install prompt instead */
+  #app { display: none; }
+  #install-prompt { display: flex; }
+</style>
+<script>
+  // If running as installed PWA (standalone), show app and hide prompt
+  if (window.navigator.standalone === true) {
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('app').style.display = 'block';
+      var p = document.getElementById('install-prompt');
+      if (p) p.style.display = 'none';
+    });
+  } else {
+    // Running in browser — show install instructions, hide app
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('app').style.display = 'none';
+      var p = document.getElementById('install-prompt');
+      if (p) p.style.display = 'flex';
+    });
+  }
+</script>
 <title>FitTrack</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
@@ -144,6 +166,30 @@ html,body{height:100%;background:var(--bg);font-family:-apple-system,'SF Pro Tex
 </style>
 </head>
 <body>
+
+<!-- INSTALL PROMPT — only shown when opened in browser (not standalone) -->
+<div id="install-prompt" style="display:none;position:fixed;inset:0;background:#0d0d0d;flex-direction:column;align-items:center;justify-content:center;padding:32px;font-family:-apple-system,'SF Pro Text',sans-serif;color:#f0f0f0;text-align:center;z-index:9999;">
+  <div style="font-size:64px;margin-bottom:24px;">💪</div>
+  <div style="font-size:26px;font-weight:700;margin-bottom:8px;">FitTrack</div>
+  <div style="font-size:15px;color:#aaa;margin-bottom:40px;line-height:1.6;">Open this as a home screen app<br>for the full experience without<br>the browser bar.</div>
+  <div style="background:#1c1c1c;border:0.5px solid rgba(255,255,255,0.1);border-radius:16px;padding:20px 24px;max-width:320px;width:100%;text-align:left;">
+    <div style="font-size:12px;font-weight:600;color:#FF6B35;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;">How to install</div>
+    <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;">
+      <div style="width:26px;height:26px;border-radius:50%;background:#FF6B35;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;">1</div>
+      <div style="font-size:14px;color:#ccc;line-height:1.5;">Tap the <strong style="color:#fff;">Share</strong> button <span style="font-size:16px;">⎙</span> at the bottom of Safari</div>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;">
+      <div style="width:26px;height:26px;border-radius:50%;background:#FF6B35;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;">2</div>
+      <div style="font-size:14px;color:#ccc;line-height:1.5;">Scroll down and tap <strong style="color:#fff;">Add to Home Screen</strong></div>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:12px;">
+      <div style="width:26px;height:26px;border-radius:50%;background:#FF6B35;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;">3</div>
+      <div style="font-size:14px;color:#ccc;line-height:1.5;">Open the <strong style="color:#fff;">FitTrack</strong> icon from your home screen</div>
+    </div>
+  </div>
+  <div style="margin-top:24px;font-size:12px;color:#555;">You only need to do this once</div>
+</div>
+
 <div id="app">
 
   <!-- TAB BAR -->
@@ -1462,3 +1508,16 @@ buildFilterChips();
 </script>
 </body>
 </html>
+Done
+There's the full code — copy and paste the whole thing into your index.html on GitHub.
+
+Here's what this change does:
+
+When opened in Safari browser → shows a clean install guide screen with the 💪 icon and step-by-step instructions (tap Share → Add to Home Screen → open from icon). The app itself is hidden.
+
+When opened from your home screen shortcut → Safari sets window.navigator.standalone = true, the install screen hides, and your full app loads with zero browser chrome — no address bar, no navigation buttons, nothing.
+
+One-time setup: Delete your old shortcut, open the page in Safari, tap Share → Add to Home Screen, then open from your home screen. You'll never see the install prompt again from that icon.
+
+
+
