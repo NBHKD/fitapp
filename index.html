@@ -43,46 +43,46 @@
 }
 html,body{height:100%;background:var(--bg);font-family:-apple-system,'SF Pro Text',sans-serif;color:var(--text);overflow:hidden;}
 #app{width:100%;height:100%;max-width:430px;margin:0 auto;position:relative;overflow:hidden;}
-
+ 
 /* SCREENS */
 .screen{display:none;flex-direction:column;position:absolute;inset:0;height:100%;}
 .screen.active{display:flex;}
-
+ 
 /* STATUS BAR */
 .sb{padding:max(env(safe-area-inset-top),14px) 20px 6px;display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:600;flex-shrink:0;}
-
+ 
 /* CONTENT */
 .content{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 0 90px;}
 .content::-webkit-scrollbar{display:none;}
 .px{padding-left:16px;padding-right:16px;}
-
+ 
 /* TAB BAR */
 .tabbar{position:absolute;bottom:0;left:0;right:0;height:calc(60px + env(safe-area-inset-bottom));background:rgba(13,13,13,0.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:0.5px solid var(--border);display:flex;align-items:flex-start;padding-top:8px;z-index:100;}
 .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;padding:2px 0;border:none;background:none;font-family:inherit;}
 .tab-icon{font-size:20px;line-height:1.2;}
 .tab-lbl{font-size:10px;font-weight:500;color:var(--text3);}
 .tab.active .tab-lbl{color:var(--g1);}
-
+ 
 /* TYPOGRAPHY */
 .page-title{font-size:26px;font-weight:700;letter-spacing:-0.4px;padding:8px 16px 16px;}
-
+ 
 /* CARDS */
 .card{background:var(--bg2);border:0.5px solid var(--border);border-radius:var(--r);padding:16px;margin-bottom:10px;}
 .card-title{font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
-
+ 
 /* BUTTONS */
 .btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px;border-radius:var(--r2);font-family:inherit;font-size:15px;font-weight:600;cursor:pointer;border:none;width:100%;transition:transform 0.1s,opacity 0.1s;}
 .btn:active{transform:scale(0.97);}
 .btn-g{background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff;}
 .btn-outline{background:transparent;color:var(--g1);border:1px solid var(--border2);}
 .btn-dark{background:var(--bg3);color:var(--text);border:0.5px solid var(--border);}
-
+ 
 /* INPUTS */
 .input{background:var(--bg3);border:0.5px solid var(--border);border-radius:var(--r2);padding:12px 14px;font-family:inherit;font-size:15px;color:var(--text);width:100%;outline:none;-webkit-appearance:none;}
 .input:focus{border-color:var(--g1);}
 .input::placeholder{color:var(--text3);}
 .lbl{font-size:12px;font-weight:500;color:var(--text2);margin-bottom:5px;display:block;}
-
+ 
 /* PILLS */
 .pill{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:600;}
 .pill-g{background:rgba(255,107,53,0.15);color:var(--g1);}
@@ -90,83 +90,83 @@ html,body{height:100%;background:var(--bg);font-family:-apple-system,'SF Pro Tex
 .pill-red{background:rgba(255,59,92,0.12);color:var(--red);}
 .pill-blue{background:rgba(10,132,255,0.12);color:var(--blue);}
 .pill-gray{background:var(--bg4);color:var(--text2);}
-
+ 
 /* EXERCISE ROW */
 .ex-row{display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:0.5px solid var(--border);cursor:pointer;transition:background 0.15s;}
 .ex-row:last-child{border-bottom:none;}
 .ex-row:active{background:var(--bg3);}
 .ex-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
-
+ 
 /* SEARCH */
 .search-wrap{position:relative;margin:0 16px 12px;}
 .search-wrap input{padding-left:40px;}
 .search-icon{position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:16px;pointer-events:none;}
-
+ 
 /* FILTER CHIPS */
 .chips{display:flex;gap:8px;overflow-x:auto;padding:0 16px 12px;scrollbar-width:none;}
 .chips::-webkit-scrollbar{display:none;}
 .chip{flex-shrink:0;padding:7px 16px;border-radius:20px;font-size:13px;font-weight:500;cursor:pointer;border:none;font-family:inherit;transition:all 0.2s;}
 .chip-off{background:var(--bg3);color:var(--text2);border:0.5px solid var(--border);}
 .chip-on{background:var(--g1);color:#fff;}
-
+ 
 /* MODAL */
 .overlay{position:absolute;inset:0;background:rgba(0,0,0,0.8);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:200;display:flex;flex-direction:column;justify-content:flex-end;}
 .sheet{background:var(--bg2);border-radius:20px 20px 0 0;border-top:0.5px solid var(--border);max-height:92%;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:calc(24px + env(safe-area-inset-bottom));}
 .sheet::-webkit-scrollbar{display:none;}
 .handle{width:36px;height:4px;background:var(--bg5);border-radius:2px;margin:12px auto 0;}
-
+ 
 /* MUSCLE DIAGRAM */
 .diagram-wrap{display:flex;gap:8px;width:100%;}
 .diagram-side{flex:1;position:relative;}
 .diagram-label{font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:1px;text-align:center;margin-bottom:4px;}
-
+ 
 /* SET ROW */
 .set-row{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--bg3);border-radius:var(--r3);margin-bottom:6px;}
 .set-n{width:26px;height:26px;border-radius:50%;background:var(--bg4);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--text2);flex-shrink:0;}
 .set-check{width:30px;height:30px;border-radius:50%;border:2px solid var(--border);cursor:pointer;display:flex;align-items:center;justify-content:center;margin-left:auto;flex-shrink:0;transition:all 0.2s;background:transparent;font-size:14px;}
 .set-check.done{background:var(--g1);border-color:var(--g1);color:#fff;}
 .mini-in{background:var(--bg4);border:0.5px solid var(--border);border-radius:7px;padding:7px 8px;font-size:14px;color:var(--text);width:60px;text-align:center;font-family:inherit;outline:none;}
-
+ 
 /* TOGGLE */
 .tog-row{display:flex;background:var(--bg3);border-radius:10px;padding:3px;gap:2px;margin-bottom:14px;}
 .tog-btn{flex:1;padding:8px;border-radius:8px;font-size:13px;font-weight:500;text-align:center;cursor:pointer;color:var(--text3);border:none;background:none;font-family:inherit;transition:all 0.2s;}
 .tog-btn.active{background:var(--bg);color:var(--text);}
-
+ 
 /* BMI GAUGE */
 .gauge{height:8px;border-radius:4px;background:linear-gradient(to right,#0A84FF 0%,#30D158 35%,#FFB300 65%,#FF3B5C 100%);position:relative;margin:12px 0 18px;}
-
+ 
 /* WORKOUT CARD */
 .wk-card{background:var(--bg2);border:0.5px solid var(--border);border-radius:var(--r);padding:16px;margin-bottom:10px;cursor:pointer;}
 .wk-card:active{transform:scale(0.99);}
-
+ 
 /* STAT GRID */
 .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;}
 .stat-card{background:var(--bg2);border:0.5px solid var(--border);border-radius:var(--r);padding:14px;}
 .stat-big{font-size:38px;font-weight:700;letter-spacing:-1px;line-height:1;}
-
+ 
 /* GRADIENT TEXT */
 .gt{background:linear-gradient(135deg,var(--g1),var(--g2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-
+ 
 /* EQUIPMENT TAG */
 .eq-tag{display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:8px;font-size:12px;font-weight:500;}
-
+ 
 /* SECTION HEADER */
 .sec-hdr{display:flex;justify-content:space-between;align-items:center;padding:0 16px;margin-bottom:10px;}
 .sec-title{font-size:17px;font-weight:600;}
 .sec-link{font-size:14px;color:var(--g1);cursor:pointer;}
-
+ 
 /* INFO ROW */
 .info-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;}
 .info-box{flex:1;min-width:80px;background:var(--bg3);border-radius:var(--r3);padding:10px 12px;}
 .info-box-lbl{font-size:10px;color:var(--text3);font-weight:500;margin-bottom:3px;}
 .info-box-val{font-size:13px;font-weight:600;color:var(--text);}
-
+ 
 /* MUSCLE LIST */
 .muscle-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
 </style>
 </head>
 <body>
-
+ 
 <!-- INSTALL PROMPT — only shown when opened in browser (not standalone) -->
 <div id="install-prompt" style="display:none;position:fixed;inset:0;background:#0d0d0d;flex-direction:column;align-items:center;justify-content:center;padding:32px;font-family:-apple-system,'SF Pro Text',sans-serif;color:#f0f0f0;text-align:center;z-index:9999;">
   <div style="font-size:64px;margin-bottom:24px;">💪</div>
@@ -189,9 +189,9 @@ html,body{height:100%;background:var(--bg);font-family:-apple-system,'SF Pro Tex
   </div>
   <div style="margin-top:24px;font-size:12px;color:#555;">You only need to do this once</div>
 </div>
-
+ 
 <div id="app">
-
+ 
   <!-- TAB BAR -->
   <div class="tabbar">
     <button class="tab active" onclick="goTab('dashboard')"><div class="tab-icon">📊</div><div class="tab-lbl">Home</div></button>
@@ -200,7 +200,7 @@ html,body{height:100%;background:var(--bg);font-family:-apple-system,'SF Pro Tex
     <button class="tab" onclick="goTab('bmi')"><div class="tab-icon">⚖️</div><div class="tab-lbl">BMI</div></button>
     <button class="tab" onclick="goTab('progress')"><div class="tab-icon">📈</div><div class="tab-lbl">Progress</div></button>
   </div>
-
+ 
   <!-- ═══════════════════════════════════ DASHBOARD ═══════════════════════════════════ -->
   <div class="screen active" id="screen-dashboard">
     <div class="sb"><span id="clk">9:41</span><span>●●●</span></div>
@@ -240,7 +240,7 @@ html,body{height:100%;background:var(--bg);font-family:-apple-system,'SF Pro Tex
       </div></div>
     </div>
   </div>
-
+ 
   <!-- ═══════════════════════════════════ WORKOUTS ════════════════════════════════════ -->
   <div class="screen" id="screen-workouts">
     <div class="sb"><span>9:41</span><span>●●●</span></div>
@@ -250,7 +250,7 @@ html,body{height:100%;background:var(--bg);font-family:-apple-system,'SF Pro Tex
       <div class="px"><button class="btn btn-g" onclick="openCreateWorkout()">+ Create New Routine</button></div>
     </div>
   </div>
-
+ 
   <!-- ═══════════════════════════════════ EXERCISES ═══════════════════════════════════ -->
   <div class="screen" id="screen-exercises">
     <div class="sb"><span>9:41</span><span>●●●</span></div>
@@ -269,7 +269,7 @@ html,body{height:100%;background:var(--bg);font-family:-apple-system,'SF Pro Tex
       </div>
     </div>
   </div>
-
+ 
   <!-- ═══════════════════════════════════ BMI ═════════════════════════════════════════ -->
   <div class="screen" id="screen-bmi">
     <div class="sb"><span>9:41</span><span>●●●</span></div>
@@ -309,7 +309,7 @@ html,body{height:100%;background:var(--bg);font-family:-apple-system,'SF Pro Tex
       </div></div>
     </div>
   </div>
-
+ 
   <!-- ═══════════════════════════════════ PROGRESS ════════════════════════════════════ -->
   <div class="screen" id="screen-progress">
     <div class="sb"><span>9:41</span><span>●●●</span></div>
@@ -335,7 +335,7 @@ html,body{height:100%;background:var(--bg);font-family:-apple-system,'SF Pro Tex
       </div></div>
     </div>
   </div>
-
+ 
   <!-- ═══════════════ MODAL: EXERCISE DETAIL ═══════════════ -->
   <div class="overlay" id="ov-ex" style="display:none;" onclick="closeOv('ex')">
     <div class="sheet" onclick="event.stopPropagation()">
@@ -343,7 +343,7 @@ html,body{height:100%;background:var(--bg);font-family:-apple-system,'SF Pro Tex
       <div id="ov-ex-body" style="padding:16px 16px 0;"></div>
     </div>
   </div>
-
+ 
   <!-- ═══════════════ MODAL: CREATE WORKOUT ════════════════ -->
   <div class="overlay" id="ov-create" style="display:none;" onclick="closeOv('create')">
     <div class="sheet" onclick="event.stopPropagation()">
@@ -351,7 +351,7 @@ html,body{height:100%;background:var(--bg);font-family:-apple-system,'SF Pro Tex
       <div id="ov-create-body" style="padding:16px;"></div>
     </div>
   </div>
-
+ 
   <!-- ═══════════════ MODAL: RUN WORKOUT ═══════════════════ -->
   <div class="overlay" id="ov-run" style="display:none;" onclick="closeOv('run')">
     <div class="sheet" onclick="event.stopPropagation()">
@@ -359,14 +359,14 @@ html,body{height:100%;background:var(--bg);font-family:-apple-system,'SF Pro Tex
       <div id="ov-run-body" style="padding:16px;"></div>
     </div>
   </div>
-
+ 
 </div><!-- /#app -->
-
+ 
 <script>
 // ═══════════════════════════════════════════════════════════════════════════
 // EXERCISE DATABASE  (80+ exercises with precise muscle targeting)
 // ═══════════════════════════════════════════════════════════════════════════
-
+ 
 // SVG muscle path IDs for front & back body diagram
 // Each muscle region has a path we'll highlight
 const MUSCLE_META = {
@@ -411,316 +411,316 @@ const MUSCLE_META = {
   'calves-soleus':  {label:'Soleus',         group:'Legs',      color:'#FF6B35'},
   'hip-flexors':    {label:'Hip Flexors',    group:'Legs',      color:'#FF6B35'},
 };
-
+ 
 // Equipment types
 const EQ = {
   BAR:'Barbell', DB:'Dumbbell', MACHINE:'Machine', CABLE:'Cable',
   BW:'Bodyweight', KB:'Kettlebell', SMITH:'Smith Machine', BAND:'Resistance Band', EZ:'EZ Bar'
 };
-
+ 
 // Difficulty
 const D = {E:'Beginner', M:'Intermediate', H:'Advanced'};
-
+ 
 const EXERCISES = [
   // ── CHEST ──
   {id:'bench-press',       name:'Bench Press',            group:'Chest',     sub:'Mid Chest',      eq:EQ.BAR,     diff:D.M, icon:'🏋️', type:'Compound',  force:'Push', mechanics:'Multi-Joint',
    primary:['mid-chest'],  secondary:['front-delt','tricep-lateral','tricep-medial'],
    desc:'The king of chest exercises. Lie flat, grip slightly wider than shoulder-width, lower bar to mid-chest then press up explosively.', base:60},
-
+ 
   {id:'incline-bench',     name:'Incline Bench Press',    group:'Chest',     sub:'Upper Chest',    eq:EQ.BAR,     diff:D.M, icon:'📐', type:'Compound',  force:'Push', mechanics:'Multi-Joint',
    primary:['upper-chest'],secondary:['front-delt','tricep-lateral'],
    desc:'Set bench to 30-45°. Targets clavicular head of pectoralis major. Great for building upper chest fullness.', base:50},
-
+ 
   {id:'decline-bench',     name:'Decline Bench Press',    group:'Chest',     sub:'Lower Chest',    eq:EQ.BAR,     diff:D.M, icon:'📉', type:'Compound',  force:'Push', mechanics:'Multi-Joint',
    primary:['lower-chest'],secondary:['tricep-lateral','front-delt'],
    desc:'Bench set to -15° to -30°. Heavy sternal head activation. Builds the lower chest shelf.', base:55},
-
+ 
   {id:'db-flat-press',     name:'Dumbbell Flat Press',    group:'Chest',     sub:'Mid Chest',      eq:EQ.DB,      diff:D.E, icon:'🏋️', type:'Compound',  force:'Push', mechanics:'Multi-Joint',
    primary:['mid-chest'],  secondary:['front-delt','tricep-medial'],
    desc:'Greater range of motion than barbell. Each side works independently correcting imbalances.', base:30},
-
+ 
   {id:'db-incline-press',  name:'DB Incline Press',       group:'Chest',     sub:'Upper Chest',    eq:EQ.DB,      diff:D.E, icon:'📐', type:'Compound',  force:'Push', mechanics:'Multi-Joint',
    primary:['upper-chest'],secondary:['front-delt','tricep-long'],
    desc:'Unilateral variation allowing deeper stretch at bottom. Set bench 30-45°.', base:25},
-
+ 
   {id:'cable-fly',         name:'Cable Fly',              group:'Chest',     sub:'Mid Chest',      eq:EQ.CABLE,   diff:D.E, icon:'✈️', type:'Isolation',  force:'Push', mechanics:'Single-Joint',
    primary:['mid-chest'],  secondary:['upper-chest','front-delt'],
    desc:'Constant tension throughout the movement. Set cables at mid height. Focus on the squeeze at peak contraction.', base:20},
-
+ 
   {id:'high-cable-fly',    name:'High Cable Fly',         group:'Chest',     sub:'Lower Chest',    eq:EQ.CABLE,   diff:D.E, icon:'⬇️', type:'Isolation',  force:'Push', mechanics:'Single-Joint',
    primary:['lower-chest'],secondary:['mid-chest','serratus'],
    desc:'Cables set high. Pull down and across the body. Maximises lower chest and serratus activation.', base:18},
-
+ 
   {id:'low-cable-fly',     name:'Low Cable Fly',          group:'Chest',     sub:'Upper Chest',    eq:EQ.CABLE,   diff:D.E, icon:'⬆️', type:'Isolation',  force:'Push', mechanics:'Single-Joint',
    primary:['upper-chest'],secondary:['mid-chest','front-delt'],
    desc:'Cables set low at knee height. Sweep upward and together. Excellent upper chest isolation.', base:18},
-
+ 
   {id:'chest-press-machine',name:'Chest Press Machine',  group:'Chest',     sub:'Mid Chest',      eq:EQ.MACHINE, diff:D.E, icon:'🖥️', type:'Compound',  force:'Push', mechanics:'Multi-Joint',
    primary:['mid-chest'],  secondary:['front-delt','tricep-lateral'],
    desc:'Machine stabilises the movement, ideal for beginners or drop sets. Adjust seat so handles align with lower chest.', base:50},
-
+ 
   {id:'pec-deck',          name:'Pec Deck / Fly Machine', group:'Chest',     sub:'Mid Chest',      eq:EQ.MACHINE, diff:D.E, icon:'🦋', type:'Isolation',  force:'Push', mechanics:'Single-Joint',
    primary:['mid-chest'],  secondary:['upper-chest','front-delt'],
    desc:'Pure isolation machine. Keep a slight bend in elbows. Squeeze hard at peak contraction for 1s.', base:40},
-
+ 
   {id:'dips',              name:'Chest Dips',             group:'Chest',     sub:'Lower Chest',    eq:EQ.BW,      diff:D.M, icon:'⬇️', type:'Compound',  force:'Push', mechanics:'Multi-Joint',
    primary:['lower-chest'],secondary:['tricep-long','front-delt'],
    desc:'Lean forward ~30° to shift focus to chest. Go deep for full stretch. Add weight when bodyweight becomes easy.', base:0},
-
+ 
   {id:'push-up',           name:'Push-Up',                group:'Chest',     sub:'Mid Chest',      eq:EQ.BW,      diff:D.E, icon:'⬆️', type:'Compound',  force:'Push', mechanics:'Multi-Joint',
    primary:['mid-chest'],  secondary:['front-delt','tricep-lateral','serratus'],
    desc:'The foundation. Keep core tight, elbows at 45°. Progress to weighted vest or archer push-ups.', base:0},
-
+ 
   {id:'smith-bench',       name:'Smith Machine Bench',    group:'Chest',     sub:'Mid Chest',      eq:EQ.SMITH,   diff:D.E, icon:'🏗️', type:'Compound',  force:'Push', mechanics:'Multi-Joint',
    primary:['mid-chest'],  secondary:['front-delt','tricep-lateral'],
    desc:'Fixed bar path allows heavier loads safely. Good for solo training. Touch chest at bottom.', base:60},
-
+ 
   // ── BACK ──
   {id:'deadlift',          name:'Deadlift',               group:'Back',      sub:'Full Back',      eq:EQ.BAR,     diff:D.H, icon:'🏗️', type:'Compound',  force:'Pull', mechanics:'Multi-Joint',
    primary:['lower-back','lats-lower'],secondary:['glute-max','hamstring-bicep','upper-traps','mid-traps'],
    desc:'The king of all lifts. Hip hinge pattern. Brace core hard. Drive floor away. Keep bar close to shins.', base:100},
-
+ 
   {id:'barbell-row',       name:'Barbell Row',            group:'Back',      sub:'Mid Back',       eq:EQ.BAR,     diff:D.M, icon:'🚣', type:'Compound',  force:'Pull', mechanics:'Multi-Joint',
    primary:['lats-upper','rhomboids'],secondary:['bicep-long','rear-delt','mid-traps'],
    desc:'Overhand grip, hinge to 45°. Pull bar to lower ribs. Retract scapula hard at top.', base:60},
-
+ 
   {id:'pendlay-row',       name:'Pendlay Row',            group:'Back',      sub:'Mid Back',       eq:EQ.BAR,     diff:D.M, icon:'🚣', type:'Compound',  force:'Pull', mechanics:'Multi-Joint',
    primary:['rhomboids','mid-traps'],secondary:['lats-upper','bicep-long','rear-delt'],
    desc:'Bar starts on floor each rep. Torso parallel to floor. Explosive pull, strict form. Great for power.', base:55},
-
+ 
   {id:'tbar-row',          name:'T-Bar Row',              group:'Back',      sub:'Mid Back',       eq:EQ.BAR,     diff:D.M, icon:'⊤', type:'Compound',  force:'Pull', mechanics:'Multi-Joint',
    primary:['lats-upper','rhomboids'],secondary:['teres','mid-traps','bicep-long'],
    desc:'Narrow or wide grip changes lat vs. rhomboid emphasis. Chest supported version removes lower back stress.', base:60},
-
+ 
   {id:'seated-cable-row',  name:'Seated Cable Row',       group:'Back',      sub:'Mid Back',       eq:EQ.CABLE,   diff:D.E, icon:'🪑', type:'Compound',  force:'Pull', mechanics:'Multi-Joint',
    primary:['lats-upper','rhomboids'],secondary:['rear-delt','bicep-short','lower-back'],
    desc:'Close-grip handle targets lats; wide grip hits rhomboids. Keep torso upright, pull elbows past sides.', base:50},
-
+ 
   {id:'lat-pulldown',      name:'Lat Pulldown',           group:'Back',      sub:'Lats',           eq:EQ.MACHINE, diff:D.E, icon:'📥', type:'Compound',  force:'Pull', mechanics:'Multi-Joint',
    primary:['lats-upper','lats-lower'],secondary:['teres','bicep-long','rear-delt'],
    desc:'Wide grip = more lat stretch. Pull to upper chest, lean slightly back, depress shoulders first.', base:50},
-
+ 
   {id:'close-grip-pulldown',name:'Close Grip Pulldown',   group:'Back',      sub:'Lats',           eq:EQ.MACHINE, diff:D.E, icon:'📥', type:'Compound',  force:'Pull', mechanics:'Multi-Joint',
    primary:['lats-lower'],  secondary:['lats-upper','bicep-short','teres'],
    desc:'Neutral grip handle. Pulls elbows to sides emphasising lower lats. Great for V-taper.', base:45},
-
+ 
   {id:'pull-up',           name:'Pull-Up',                group:'Back',      sub:'Lats',           eq:EQ.BW,      diff:D.H, icon:'⬆️', type:'Compound',  force:'Pull', mechanics:'Multi-Joint',
    primary:['lats-upper'],  secondary:['bicep-long','teres','rear-delt'],
    desc:'Dead hang start. Depress scapula first. Pull chest to bar. Ultimate bodyweight lat builder.', base:0},
-
+ 
   {id:'chin-up',           name:'Chin-Up',                group:'Back',      sub:'Lats',           eq:EQ.BW,      diff:D.M, icon:'⬆️', type:'Compound',  force:'Pull', mechanics:'Multi-Joint',
    primary:['lats-upper','bicep-long'],secondary:['teres','bicep-short'],
    desc:'Underhand grip shifts more load to biceps. Easier than pull-ups. Great bicep and lat combo.', base:0},
-
+ 
   {id:'single-db-row',     name:'Single-Arm DB Row',      group:'Back',      sub:'Lats',           eq:EQ.DB,      diff:D.E, icon:'💪', type:'Compound',  force:'Pull', mechanics:'Multi-Joint',
    primary:['lats-upper'],  secondary:['rhomboids','teres','bicep-long'],
    desc:'Brace on bench. Row elbow high past back. Full stretch at bottom, full retraction at top.', base:25},
-
+ 
   {id:'machine-row',       name:'Machine Row',            group:'Back',      sub:'Mid Back',       eq:EQ.MACHINE, diff:D.E, icon:'🖥️', type:'Compound',  force:'Pull', mechanics:'Multi-Joint',
    primary:['rhomboids','mid-traps'],secondary:['lats-upper','rear-delt','bicep-short'],
    desc:'Chest pad removes lower back from the equation. Ideal for focused lat & rhomboid work.', base:55},
-
+ 
   {id:'face-pull',         name:'Face Pull',              group:'Back',      sub:'Rear Delts',     eq:EQ.CABLE,   diff:D.E, icon:'😤', type:'Isolation',  force:'Pull', mechanics:'Single-Joint',
    primary:['rear-delt','mid-traps'],secondary:['rhomboids','upper-traps'],
    desc:'Rope attachment at eye level. Pull to face, flare elbows. Critical for shoulder health and posture.', base:20},
-
+ 
   {id:'shrugs',            name:'Barbell Shrugs',         group:'Back',      sub:'Traps',          eq:EQ.BAR,     diff:D.E, icon:'🤷', type:'Isolation',  force:'Pull', mechanics:'Single-Joint',
    primary:['upper-traps'], secondary:['mid-traps'],
    desc:'Heavy load. Slow controlled shrug straight up. No rolling — that strains AC joint. Hold 1s at top.', base:80},
-
+ 
   {id:'hyperextension',    name:'Back Extension',         group:'Back',      sub:'Lower Back',     eq:EQ.BW,      diff:D.E, icon:'🔄', type:'Isolation',  force:'Pull', mechanics:'Single-Joint',
    primary:['lower-back'],  secondary:['glute-max','hamstring-semi'],
    desc:'Roman chair. Hinge at hips, round down controlled, extend to parallel — do not hyperextend.', base:0},
-
+ 
   // ── SHOULDERS ──
   {id:'ohp',               name:'Overhead Press',         group:'Shoulders', sub:'Front Delts',    eq:EQ.BAR,     diff:D.H, icon:'🔝', type:'Compound',  force:'Push', mechanics:'Multi-Joint',
    primary:['front-delt'],  secondary:['side-delt','tricep-long','upper-traps'],
    desc:'Bar starts at collar bone. Press straight up, lock out. Core braced. The best shoulder mass builder.', base:40},
-
+ 
   {id:'db-shoulder-press', name:'DB Shoulder Press',      group:'Shoulders', sub:'Front Delts',    eq:EQ.DB,      diff:D.M, icon:'🔝', type:'Compound',  force:'Push', mechanics:'Multi-Joint',
    primary:['front-delt','side-delt'],secondary:['tricep-lateral','upper-traps'],
    desc:'Neutral or pronated grip. Elbows at 90° at start. Press to lockout without touching at top.', base:20},
-
+ 
   {id:'machine-shoulder-press',name:'Machine Shoulder Press',group:'Shoulders',sub:'Front Delts', eq:EQ.MACHINE, diff:D.E, icon:'🖥️', type:'Compound',  force:'Push', mechanics:'Multi-Joint',
    primary:['front-delt'],  secondary:['side-delt','tricep-lateral'],
    desc:'Guided path reduces stability demand. Great for beginners or finishing sets when fatigued.', base:40},
-
+ 
   {id:'lateral-raise',     name:'Lateral Raise',          group:'Shoulders', sub:'Side Delts',     eq:EQ.DB,      diff:D.E, icon:'↔️', type:'Isolation',  force:'Push', mechanics:'Single-Joint',
    primary:['side-delt'],   secondary:['upper-traps','front-delt'],
    desc:'Slight forward lean and internal rotation (pinky up) maximises medial delt. Stop at shoulder height.', base:10},
-
+ 
   {id:'cable-lateral-raise',name:'Cable Lateral Raise',   group:'Shoulders', sub:'Side Delts',     eq:EQ.CABLE,   diff:D.E, icon:'↔️', type:'Isolation',  force:'Push', mechanics:'Single-Joint',
    primary:['side-delt'],   secondary:['upper-traps'],
    desc:'Constant tension from cable vs. dumbbell. Single arm, cable at hip height. Lean slightly away.', base:8},
-
+ 
   {id:'front-raise',       name:'Front Raise',            group:'Shoulders', sub:'Front Delts',    eq:EQ.DB,      diff:D.E, icon:'⬆️', type:'Isolation',  force:'Push', mechanics:'Single-Joint',
    primary:['front-delt'],  secondary:['upper-chest','side-delt'],
    desc:'Raise to eye level with straight arms. Alternate arms to increase volume. Avoid swinging.', base:10},
-
+ 
   {id:'reverse-fly',       name:'Reverse Fly',            group:'Shoulders', sub:'Rear Delts',     eq:EQ.DB,      diff:D.E, icon:'🦅', type:'Isolation',  force:'Pull', mechanics:'Single-Joint',
    primary:['rear-delt'],   secondary:['rhomboids','mid-traps'],
    desc:'Bent over, arms arc back and up. Keep slight elbow bend. Squeeze shoulder blades at top.', base:10},
-
+ 
   {id:'arnold-press',      name:'Arnold Press',           group:'Shoulders', sub:'All Delts',      eq:EQ.DB,      diff:D.M, icon:'💪', type:'Compound',  force:'Push', mechanics:'Multi-Joint',
    primary:['front-delt','side-delt'],secondary:['rear-delt','tricep-long'],
    desc:'Start palms facing you, rotate out as you press. Hits all three delt heads in one movement.', base:18},
-
+ 
   {id:'upright-row',       name:'Upright Row',            group:'Shoulders', sub:'Side Delts',     eq:EQ.BAR,     diff:D.M, icon:'⬆️', type:'Compound',  force:'Pull', mechanics:'Multi-Joint',
    primary:['side-delt','upper-traps'],secondary:['front-delt','bicep-short'],
    desc:'Wide grip reduces impingement risk. Pull bar to chin, elbows lead. Stop at mid-chest if shoulder pain.', base:30},
-
+ 
   // ── ARMS: BICEPS ──
   {id:'barbell-curl',      name:'Barbell Curl',           group:'Arms',      sub:'Biceps',         eq:EQ.BAR,     diff:D.E, icon:'💪', type:'Isolation',  force:'Pull', mechanics:'Single-Joint',
    primary:['bicep-long'],  secondary:['bicep-short','forearms'],
    desc:'Classic mass builder. Supinated grip. Keep elbows pinned to sides. Full extension at bottom.', base:30},
-
+ 
   {id:'ez-curl',           name:'EZ Bar Curl',            group:'Arms',      sub:'Biceps',         eq:EQ.EZ,      diff:D.E, icon:'〰️', type:'Isolation',  force:'Pull', mechanics:'Single-Joint',
    primary:['bicep-short'], secondary:['bicep-long','forearms'],
    desc:'Semi-supinated grip hits brachialis and short head more. Easier on wrists than straight bar.', base:28},
-
+ 
   {id:'incline-db-curl',   name:'Incline DB Curl',        group:'Arms',      sub:'Biceps',         eq:EQ.DB,      diff:D.M, icon:'📐', type:'Isolation',  force:'Pull', mechanics:'Single-Joint',
    primary:['bicep-long'],  secondary:['bicep-short'],
    desc:'Incline stretches long head under load. Maximum long head activation. Arms hang straight down.', base:12},
-
+ 
   {id:'hammer-curl',       name:'Hammer Curl',            group:'Arms',      sub:'Brachialis',     eq:EQ.DB,      diff:D.E, icon:'🔨', type:'Isolation',  force:'Pull', mechanics:'Single-Joint',
    primary:['bicep-long','forearms'],secondary:['bicep-short'],
    desc:'Neutral grip targets brachialis, brachioradialis. Builds arm thickness not just peak. Alternate or both.', base:15},
-
+ 
   {id:'preacher-curl',     name:'Preacher Curl',          group:'Arms',      sub:'Biceps',         eq:EQ.EZ,      diff:D.E, icon:'🙏', type:'Isolation',  force:'Pull', mechanics:'Single-Joint',
    primary:['bicep-short'], secondary:['bicep-long'],
    desc:'Arm fixed on pad eliminates cheating. Best for short head isolation and peak bicep.', base:20},
-
+ 
   {id:'cable-curl',        name:'Cable Curl',             group:'Arms',      sub:'Biceps',         eq:EQ.CABLE,   diff:D.E, icon:'📡', type:'Isolation',  force:'Pull', mechanics:'Single-Joint',
    primary:['bicep-long','bicep-short'],secondary:['forearms'],
    desc:'Constant tension throughout full ROM. Use straight bar or rope. Great finishing exercise.', base:20},
-
+ 
   {id:'concentration-curl',name:'Concentration Curl',     group:'Arms',      sub:'Biceps',         eq:EQ.DB,      diff:D.E, icon:'🎯', type:'Isolation',  force:'Pull', mechanics:'Single-Joint',
    primary:['bicep-short'], secondary:['bicep-long'],
    desc:'Elbow braced on inner thigh. Supinate at top. Maximum peak contraction. Best short head isolator.', base:10},
-
+ 
   // ── ARMS: TRICEPS ──
   {id:'close-grip-bench',  name:'Close Grip Bench Press', group:'Arms',      sub:'Triceps',        eq:EQ.BAR,     diff:D.M, icon:'🤝', type:'Compound',  force:'Push', mechanics:'Multi-Joint',
    primary:['tricep-lateral','tricep-medial'],secondary:['tricep-long','mid-chest','front-delt'],
    desc:'Hands shoulder-width. Keep elbows tucked. Best compound tricep exercise for overall mass.', base:50},
-
+ 
   {id:'jm-press',          name:'JM Press',               group:'Arms',      sub:'Triceps',        eq:EQ.BAR,     diff:D.H, icon:'⚡', type:'Compound',  force:'Push', mechanics:'Multi-Joint',
    primary:['tricep-long','tricep-lateral'],secondary:['tricep-medial'],
    desc:'Hybrid between skullcrusher and close-grip press. Bar descends to throat with elbows forward. Advanced move — start light.', base:35},
-
+ 
   {id:'skullcrusher',      name:'Skullcrusher',           group:'Arms',      sub:'Triceps',        eq:EQ.EZ,      diff:D.M, icon:'💀', type:'Isolation',  force:'Push', mechanics:'Single-Joint',
    primary:['tricep-long'], secondary:['tricep-lateral','tricep-medial'],
    desc:'Lower bar to forehead. Keep upper arms vertical. Long head gets maximum stretch at bottom.', base:25},
-
+ 
   {id:'overhead-tricep',   name:'Overhead Tricep Extension',group:'Arms',    sub:'Triceps',        eq:EQ.DB,      diff:D.E, icon:'🔝', type:'Isolation',  force:'Push', mechanics:'Single-Joint',
    primary:['tricep-long'], secondary:['tricep-lateral'],
    desc:'Long head fully stretched overhead. Keep elbows close. Lower behind head, press up. Single or bilateral.', base:20},
-
+ 
   {id:'tricep-pushdown',   name:'Tricep Pushdown',        group:'Arms',      sub:'Triceps',        eq:EQ.CABLE,   diff:D.E, icon:'⬇️', type:'Isolation',  force:'Push', mechanics:'Single-Joint',
    primary:['tricep-lateral','tricep-medial'],secondary:['tricep-long'],
    desc:'Bar or V-bar attachment. Elbows locked at sides. Full lockout. Straight bar supinated hits medial head.', base:30},
-
+ 
   {id:'rope-pushdown',     name:'Rope Pushdown',          group:'Arms',      sub:'Triceps',        eq:EQ.CABLE,   diff:D.E, icon:'🪢', type:'Isolation',  force:'Push', mechanics:'Single-Joint',
    primary:['tricep-lateral'],secondary:['tricep-medial','tricep-long'],
    desc:'Rope allows wrists to pronate at bottom, flaring rope out increases lateral head activation.', base:25},
-
+ 
   {id:'single-arm-pushdown',name:'Single-Arm Pushdown',   group:'Arms',      sub:'Triceps',        eq:EQ.CABLE,   diff:D.E, icon:'☝️', type:'Isolation',  force:'Push', mechanics:'Single-Joint',
    primary:['tricep-lateral','tricep-medial'],secondary:['tricep-long'],
    desc:'Fix imbalances. Full supination at bottom hits all three heads. 1s hold at lockout.', base:15},
-
+ 
   {id:'dip-tricep',        name:'Tricep Dips',            group:'Arms',      sub:'Triceps',        eq:EQ.BW,      diff:D.M, icon:'⬇️', type:'Compound',  force:'Push', mechanics:'Multi-Joint',
    primary:['tricep-long','tricep-lateral'],secondary:['lower-chest','front-delt'],
    desc:'Upright torso, elbows close. Lower until 90°. Excellent mass builder once you can do sets of 15+.', base:0},
-
+ 
   // ── LEGS ──
   {id:'back-squat',        name:'Back Squat',             group:'Legs',      sub:'Quads',          eq:EQ.BAR,     diff:D.H, icon:'🦵', type:'Compound',  force:'Push', mechanics:'Multi-Joint',
    primary:['quad-rectus','quad-vastus-l','quad-vastus-m'],secondary:['glute-max','hamstring-bicep','lower-back'],
    desc:'Bar on traps (high bar) or rear deltoids (low bar). Depth past parallel for full glute activation.', base:80},
-
+ 
   {id:'front-squat',       name:'Front Squat',            group:'Legs',      sub:'Quads',          eq:EQ.BAR,     diff:D.H, icon:'🦵', type:'Compound',  force:'Push', mechanics:'Multi-Joint',
    primary:['quad-rectus','quad-vastus-m'],secondary:['upper-abs','glute-max'],
    desc:'Bar on front deltoids. More upright torso than back squat. Harder on wrists. Elite quad developer.', base:60},
-
+ 
   {id:'leg-press',         name:'Leg Press',              group:'Legs',      sub:'Quads',          eq:EQ.MACHINE, diff:D.E, icon:'🦿', type:'Compound',  force:'Push', mechanics:'Multi-Joint',
    primary:['quad-rectus','quad-vastus-l'],secondary:['glute-max','hamstring-semi'],
    desc:'Foot position changes emphasis. High/wide = more glutes. Narrow/low = more quads. Never lock knees.', base:100},
-
+ 
   {id:'hack-squat',        name:'Hack Squat',             group:'Legs',      sub:'Quads',          eq:EQ.MACHINE, diff:D.M, icon:'⚙️', type:'Compound',  force:'Push', mechanics:'Multi-Joint',
    primary:['quad-vastus-l','quad-vastus-m'],secondary:['quad-rectus','glute-max'],
    desc:'45° sled. Lower foot placement hits quads harder. Can go very heavy safely.', base:80},
-
+ 
   {id:'leg-extension',     name:'Leg Extension',          group:'Legs',      sub:'Quads',          eq:EQ.MACHINE, diff:D.E, icon:'🦵', type:'Isolation',  force:'Push', mechanics:'Single-Joint',
    primary:['quad-rectus'], secondary:['quad-vastus-l','quad-vastus-m'],
    desc:'Pure rectus femoris and vastus isolation. Leg press first, then finish with this. Hold 1s at top.', base:40},
-
+ 
   {id:'romanian-deadlift', name:'Romanian Deadlift',      group:'Legs',      sub:'Hamstrings',     eq:EQ.BAR,     diff:D.M, icon:'🔄', type:'Compound',  force:'Pull', mechanics:'Multi-Joint',
    primary:['hamstring-bicep','hamstring-semi'],secondary:['glute-max','lower-back'],
    desc:'Hip hinge with soft knee bend. Bar slides down legs. Feel deep hamstring stretch. Best ham builder.', base:70},
-
+ 
   {id:'stiff-leg-dl',      name:'Stiff-Leg Deadlift',     group:'Legs',      sub:'Hamstrings',     eq:EQ.BAR,     diff:D.M, icon:'🔄', type:'Compound',  force:'Pull', mechanics:'Multi-Joint',
    primary:['hamstring-semi'],secondary:['lower-back','glute-max'],
    desc:'Knees nearly straight, more lumbar flexion than RDL. Targets high hamstrings near glute-ham tie-in.', base:60},
-
+ 
   {id:'leg-curl',          name:'Seated Leg Curl',        group:'Legs',      sub:'Hamstrings',     eq:EQ.MACHINE, diff:D.E, icon:'🔄', type:'Isolation',  force:'Pull', mechanics:'Single-Joint',
    primary:['hamstring-bicep','hamstring-semi'],secondary:['calves-gastro'],
    desc:'Seated version gets better stretch at origin than lying. Full ROM, squeeze at full flexion.', base:35},
-
+ 
   {id:'lying-leg-curl',    name:'Lying Leg Curl',         group:'Legs',      sub:'Hamstrings',     eq:EQ.MACHINE, diff:D.E, icon:'🔄', type:'Isolation',  force:'Pull', mechanics:'Single-Joint',
    primary:['hamstring-bicep'],secondary:['hamstring-semi','calves-gastro'],
    desc:'Classic machine. Toes pointed down reduces gastrocnemius contribution. Full extension, full curl.', base:30},
-
+ 
   {id:'lunge',             name:'Barbell Lunge',          group:'Legs',      sub:'Quads/Glutes',   eq:EQ.BAR,     diff:D.M, icon:'🚶', type:'Compound',  force:'Push', mechanics:'Multi-Joint',
    primary:['quad-rectus','glute-max'],secondary:['quad-vastus-m','hamstring-bicep'],
    desc:'Step forward, back knee touches floor. Long stride = more glutes, short stride = more quads.', base:40},
-
+ 
   {id:'bulgarian-split',   name:'Bulgarian Split Squat',  group:'Legs',      sub:'Quads/Glutes',   eq:EQ.DB,      diff:D.H, icon:'🇧🇬', type:'Compound',  force:'Push', mechanics:'Multi-Joint',
    primary:['quad-rectus','glute-max'],secondary:['quad-vastus-l','hip-flexors'],
    desc:'Rear foot elevated. Front foot far = glutes. Close = quads. Most brutal single-leg exercise.', base:20},
-
+ 
   {id:'hip-thrust',        name:'Hip Thrust',             group:'Legs',      sub:'Glutes',         eq:EQ.BAR,     diff:D.E, icon:'🍑', type:'Isolation',  force:'Push', mechanics:'Single-Joint',
    primary:['glute-max'],   secondary:['glute-med','hamstring-semi'],
    desc:'Upper back on bench. Bar on hip crease with pad. Full hip extension, squeeze hard at top.', base:80},
-
+ 
   {id:'glute-kickback',    name:'Cable Glute Kickback',   group:'Legs',      sub:'Glutes',         eq:EQ.CABLE,   diff:D.E, icon:'🍑', type:'Isolation',  force:'Push', mechanics:'Single-Joint',
    primary:['glute-max'],   secondary:['hamstring-bicep'],
    desc:'Ankle cuff attachment. Kick back and up, squeeze at top. Control the negative.', base:15},
-
+ 
   {id:'calf-raise-standing',name:'Standing Calf Raise',   group:'Legs',      sub:'Calves',         eq:EQ.MACHINE, diff:D.E, icon:'🦶', type:'Isolation',  force:'Push', mechanics:'Single-Joint',
    primary:['calves-gastro'],secondary:['calves-soleus'],
    desc:'Full ROM: all the way down, all the way up. Gastrocnemius only fully contracts with straight knee.', base:80},
-
+ 
   {id:'seated-calf-raise',  name:'Seated Calf Raise',     group:'Legs',      sub:'Calves',         eq:EQ.MACHINE, diff:D.E, icon:'🦶', type:'Isolation',  force:'Push', mechanics:'Single-Joint',
    primary:['calves-soleus'],secondary:['calves-gastro'],
    desc:'Bent knee takes gastroc out of it, isolating soleus. Often neglected but vital for lower leg size.', base:40},
-
+ 
   // ── CORE ──
   {id:'crunch',            name:'Crunch',                 group:'Core',      sub:'Abs',            eq:EQ.BW,      diff:D.E, icon:'🔄', type:'Isolation',  force:'Pull', mechanics:'Single-Joint',
    primary:['upper-abs'],   secondary:['lower-abs'],
    desc:'Curl shoulders off floor. Do not pull neck. Focus on breathing out and contracting abs hard.', base:0},
-
+ 
   {id:'cable-crunch',      name:'Cable Crunch',           group:'Core',      sub:'Abs',            eq:EQ.CABLE,   diff:D.E, icon:'📡', type:'Isolation',  force:'Pull', mechanics:'Single-Joint',
    primary:['upper-abs','lower-abs'],secondary:['obliques'],
    desc:'Kneel, rope behind head. Crunch down bringing elbows to knees. Best weighted ab exercise.', base:20},
-
+ 
   {id:'leg-raise',         name:'Hanging Leg Raise',      group:'Core',      sub:'Lower Abs',      eq:EQ.BW,      diff:D.M, icon:'⬆️', type:'Isolation',  force:'Pull', mechanics:'Single-Joint',
    primary:['lower-abs'],   secondary:['hip-flexors','upper-abs'],
    desc:'Dead hang, raise straight legs to parallel or beyond. Posterior pelvic tilt at top for full abs.', base:0},
-
+ 
   {id:'plank',             name:'Plank',                  group:'Core',      sub:'Core Stability',  eq:EQ.BW,      diff:D.E, icon:'🧱', type:'Isometric',  force:'Push', mechanics:'Multi-Joint',
    primary:['lower-abs','upper-abs'],secondary:['obliques','lower-back','serratus'],
    desc:'Elbows under shoulders. Straight line head to heel. Breathe. Start with 30s, progress to 2 min.', base:0},
-
+ 
   {id:'russian-twist',     name:'Russian Twist',          group:'Core',      sub:'Obliques',       eq:EQ.DB,      diff:D.E, icon:'🌀', type:'Isolation',  force:'Pull', mechanics:'Single-Joint',
    primary:['obliques'],    secondary:['upper-abs','lower-abs'],
    desc:'Feet off floor, lean back 45°. Rotate DB side to side. Slow and controlled, feel the obliques.', base:10},
-
+ 
   {id:'ab-wheel',          name:'Ab Wheel Rollout',       group:'Core',      sub:'Abs',            eq:EQ.BW,      diff:D.H, icon:'⚙️', type:'Isolation',  force:'Pull', mechanics:'Multi-Joint',
    primary:['lower-abs','upper-abs'],secondary:['serratus','lower-back'],
    desc:'Roll out until body parallel, pull back using abs not arms. Most demanding ab exercise.', base:0},
 ];
-
+ 
 const GROUPS = ['All', ...new Set(EXERCISES.map(e=>e.group))];
 const EQUIPS = ['All', ...new Set(EXERCISES.map(e=>e.eq))];
-
+ 
 // ═══════════════════════════════════════════════════════════════════════════
 // STATE & PERSISTENCE
 // ═══════════════════════════════════════════════════════════════════════════
@@ -731,7 +731,7 @@ let S = {
 };
 function load(){try{const d=localStorage.getItem('ft_v4');if(d)S={...S,...JSON.parse(d)};}catch(e){}}
 function save(){try{localStorage.setItem('ft_v4',JSON.stringify(S));}catch(e){}}
-
+ 
 // ═══════════════════════════════════════════════════════════════════════════
 // UTILITIES
 // ═══════════════════════════════════════════════════════════════════════════
@@ -744,11 +744,11 @@ function getRecWeight(ex){
   const b=S.bmi.weight?Math.round(parseFloat(S.bmi.weight)*0.05):0;
   return Math.max(0,ex.base+b+(weekNum()%4)*2);
 }
-
+ 
 // clock
 function tick(){const t=new Date();const s=t.getHours().toString().padStart(2,'0')+':'+t.getMinutes().toString().padStart(2,'0');document.querySelectorAll('.clk-el').forEach(e=>e.textContent=s);}
 setInterval(tick,15000);
-
+ 
 // ═══════════════════════════════════════════════════════════════════════════
 // TABS
 // ═══════════════════════════════════════════════════════════════════════════
@@ -765,7 +765,7 @@ function goTab(tab){
   if(tab==='bmi')loadBmiForm();
   if(tab==='progress')renderProgress();
 }
-
+ 
 // ═══════════════════════════════════════════════════════════════════════════
 // DASHBOARD
 // ═══════════════════════════════════════════════════════════════════════════
@@ -775,15 +775,15 @@ function renderDash(){
   const mns=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   document.getElementById('dash-date').textContent=`${dns[now.getDay()]}, ${mns[now.getMonth()]} ${now.getDate()}`;
   document.getElementById('dash-name').textContent=S.bmi.name||'Athlete';
-
+ 
   const wd=weekDays();
   const doneWk=wd.filter(d=>(S.completedDates[d]||[]).length>0).length;
   document.getElementById('d-wk').textContent=doneWk;
-
+ 
   let streak=0;const cd=new Date();
   while(true){const k=cd.toISOString().split('T')[0];if((S.completedDates[k]||[]).length>0){streak++;cd.setDate(cd.getDate()-1);}else break;}
   document.getElementById('d-str').textContent=streak;
-
+ 
   // chart
   const chart=document.getElementById('wk-chart'),lbls=document.getElementById('wk-lbls');
   chart.innerHTML='';lbls.innerHTML='';
@@ -800,7 +800,7 @@ function renderDash(){
     lbl.textContent=dn[new Date(d+'T12:00:00').getDay()];
     lbls.appendChild(lbl);
   });
-
+ 
   // checklist
   const cl=document.getElementById('d-list'),em=document.getElementById('d-empty');
   cl.innerHTML='';
@@ -822,7 +822,7 @@ function renderDash(){
     cl.appendChild(row);
   });
   document.getElementById('d-cnt').textContent=`${done}/${S.workouts.length}`;
-
+ 
   const bv=calcBmiValue();
   if(bv){
     document.getElementById('bmi-dash-wrap').style.display='block';
@@ -833,7 +833,7 @@ function renderDash(){
     document.getElementById('d-bmi-goal').textContent=ch!==0?`Goal: ${ch>0?'+':''}${ch} ${u}/week`:'Maintain current weight';
   }
 }
-
+ 
 function toggleDone(date,wid,el){
   if(!S.completedDates[date])S.completedDates[date]=[];
   const i=S.completedDates[date].indexOf(wid);
@@ -841,7 +841,7 @@ function toggleDone(date,wid,el){
   else{S.completedDates[date].push(wid);el.style.background='var(--g1)';el.style.color='#fff';el.textContent='✓';}
   save();renderDash();
 }
-
+ 
 // ═══════════════════════════════════════════════════════════════════════════
 // WORKOUTS
 // ═══════════════════════════════════════════════════════════════════════════
@@ -872,12 +872,12 @@ function renderWorkouts(){
     el.appendChild(div);
   });
 }
-
+ 
 function delWorkout(id){if(!confirm('Delete this routine?'))return;S.workouts=S.workouts.filter(w=>w.id!==id);save();renderWorkouts();}
-
+ 
 // In-memory selection set — persists across searches and re-renders
 let _createSelections = new Set();
-
+ 
 function openCreateWorkout(editId){
   const ex=editId?S.workouts.find(w=>w.id===editId):null;
   // Seed the in-memory set from existing workout (or empty for new)
@@ -896,12 +896,12 @@ function openCreateWorkout(editId){
   renderCreateList();
   document.getElementById('ov-create').style.display='flex';
 }
-
+ 
 function updateSelCount(){
   const el=document.getElementById('sel-count');
   if(el) el.textContent=_createSelections.size>0?`(${_createSelections.size} selected)`:'';
 }
-
+ 
 function renderCreateList(){
   const search=(document.getElementById('create-search')||{}).value||'';
   const el=document.getElementById('create-ex-list');if(!el)return;
@@ -919,11 +919,11 @@ function renderCreateList(){
   }).join('');
   updateSelCount();
 }
-
+ 
 function filterCreateList(){
   renderCreateList();
 }
-
+ 
 function toggleCreateEx(id){
   if(_createSelections.has(id)){_createSelections.delete(id);}
   else{_createSelections.add(id);}
@@ -935,7 +935,7 @@ function toggleCreateEx(id){
   if(ck){ck.style.borderColor=sel?'var(--g1)':'var(--border)';ck.style.background=sel?'var(--g1)':'transparent';ck.textContent=sel?'✓':'';}
   updateSelCount();
 }
-
+ 
 function saveWorkout(editId){
   const name=document.getElementById('nw-name').value.trim();
   if(!name){alert('Enter a name');return;}
@@ -947,7 +947,7 @@ function saveWorkout(editId){
   _createSelections=new Set();
   save();closeOv('create');renderWorkouts();
 }
-
+ 
 // ═══════════════════════════════════════════════════════════════════════════
 // RUN WORKOUT
 // ═══════════════════════════════════════════════════════════════════════════
@@ -978,7 +978,7 @@ function runWorkout(id){
     <button class="btn btn-dark" style="margin-top:8px;" onclick="closeOv('run')">Cancel</button>`;
   document.getElementById('ov-run').style.display='flex';
 }
-
+ 
 function tapSet(ei,si,exId){
   const el=document.getElementById(`sc-${ei}-${si}`),wi=document.getElementById(`w-${ei}-${si}`);
   el.classList.toggle('done');
@@ -994,13 +994,13 @@ function tapSet(ei,si,exId){
     }
   } else el.textContent='';
 }
-
+ 
 function finishWorkout(id){
   const t=todayKey();if(!S.completedDates[t])S.completedDates[t]=[];
   if(!S.completedDates[t].includes(id))S.completedDates[t].push(id);
   save();closeOv('run');goTab('dashboard');
 }
-
+ 
 // ═══════════════════════════════════════════════════════════════════════════
 // EXERCISE LIST
 // ═══════════════════════════════════════════════════════════════════════════
@@ -1029,12 +1029,12 @@ function buildFilterChips(){
   }
   updateChips();
 }
-
+ 
 function updateChips(){
   document.querySelectorAll('#group-chips .chip').forEach(b=>{b.className='chip '+(b.dataset.g===S.groupFilter?'chip-on':'chip-off');});
   document.querySelectorAll('#eq-chips .chip').forEach(b=>{b.className='chip '+(b.dataset.q===S.eqFilter?'chip-on':'chip-off');});
 }
-
+ 
 function renderExList(){
   const search=(document.getElementById('ex-search')||{}).value||'';
   const filtered=EXERCISES.filter(e=>{
@@ -1065,7 +1065,7 @@ function renderExList(){
     el.appendChild(row);
   });
 }
-
+ 
 // ═══════════════════════════════════════════════════════════════════════════
 // EXERCISE DETAIL — MUSCLE DIAGRAM
 // ═══════════════════════════════════════════════════════════════════════════
@@ -1075,7 +1075,7 @@ function showExDetail(id){
   const hist=(S.exerciseHistory[id]||[]).slice().reverse().slice(0,8);
   const unit=S.bmi.unit==='metric'?'kg':'lb';
   const best=hist.length>0?Math.max(...hist.map(h=>h.weight)):null;
-
+ 
   document.getElementById('ov-ex-body').innerHTML=`
     <!-- HEADER -->
     <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
@@ -1085,7 +1085,7 @@ function showExDetail(id){
         <div style="font-size:13px;color:var(--g1);margin-top:2px;">${ex.sub}</div>
       </div>
     </div>
-
+ 
     <!-- INFO ROW -->
     <div class="info-row">
       <div class="info-box"><div class="info-box-lbl">Muscle Group</div><div class="info-box-val" style="color:var(--g1);">${ex.sub}</div></div>
@@ -1097,10 +1097,10 @@ function showExDetail(id){
       <div class="info-box"><div class="info-box-lbl">Force</div><div class="info-box-val">${ex.force}</div></div>
       <div class="info-box"><div class="info-box-lbl">Mechanics</div><div class="info-box-val">${ex.mechanics}</div></div>
     </div>
-
+ 
     <!-- DESC -->
     <div style="background:var(--bg3);border-radius:var(--r3);padding:12px;margin-bottom:14px;font-size:13px;color:var(--text2);line-height:1.55;">${ex.desc}</div>
-
+ 
     <!-- WEIGHT CHIPS -->
     <div style="display:flex;gap:10px;margin-bottom:16px;">
       <div style="flex:1;background:var(--bg3);border:0.5px solid var(--border2);border-radius:var(--r2);padding:12px;text-align:center;">
@@ -1114,7 +1114,7 @@ function showExDetail(id){
         <div style="font-size:11px;color:var(--text3);">${best?unit:''}</div>
       </div>
     </div>
-
+ 
     <!-- MUSCLE DIAGRAM -->
     <div style="margin-bottom:14px;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
@@ -1137,7 +1137,7 @@ function showExDetail(id){
         </div>
       </div>
     </div>
-
+ 
     <!-- MUSCLES WORKED LIST -->
     <div style="margin-bottom:16px;">
       <div style="font-size:14px;font-weight:600;margin-bottom:10px;">Muscles Worked</div>
@@ -1152,7 +1152,7 @@ function showExDetail(id){
         <span style="font-size:13px;color:var(--text2);">${MUSCLE_META[m]?.label||m}</span>
       </div>`).join('')}`:''}
     </div>
-
+ 
     <!-- HISTORY -->
     <div style="font-size:14px;font-weight:600;margin-bottom:10px;">Weight History</div>
     ${hist.length>0?hist.map(h=>`<div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:0.5px solid var(--border);">
@@ -1163,218 +1163,481 @@ function showExDetail(id){
   `;
   document.getElementById('ov-ex').style.display='flex';
 }
-
+ 
 // ═══════════════════════════════════════════════════════════════════════════
-// SVG BODY DIAGRAMS
-// Each muscle region is an SVG path/ellipse. Primary = bright green, secondary = dim green
+// SVG BODY DIAGRAMS — Anatomically realistic muscular figure
 // ═══════════════════════════════════════════════════════════════════════════
-function mFill(id, primary, secondary){
-  if(primary.includes(id)) return '#FF6B35';
-  if(secondary.includes(id)) return 'rgba(255,107,53,0.32)';
-  return 'rgba(255,255,255,0.06)';
+function mStyle(id, primary, secondary){
+  if(primary.includes(id)) return {fill:'url(#mg-active)', stroke:'#FF6B35', sw:'0.6', op:'1', glow:true};
+  if(secondary.includes(id)) return {fill:'url(#mg-secondary)', stroke:'rgba(255,107,53,0.6)', sw:'0.4', op:'0.85', glow:false};
+  return {fill:'url(#mg-rest)', stroke:'rgba(255,255,255,0.06)', sw:'0.3', op:'1', glow:false};
 }
-function mOp(id,primary,secondary){return (primary.includes(id)||secondary.includes(id))?1:1;}
-
+ 
+function mAttr(id, primary, secondary){
+  const s=mStyle(id,primary,secondary);
+  return `fill="${s.fill}" stroke="${s.stroke}" stroke-width="${s.sw}" opacity="${s.op}"${s.glow?' filter="url(#glow)"':''}`;
+}
+ 
 function buildFrontSVG(primary, secondary){
-  const f=(id)=>mFill(id,primary,secondary);
-  const glow=primary.length>0?`<filter id="glow-f"><feGaussianBlur stdDeviation="2.5" result="cb"/><feMerge><feMergeNode in="cb"/><feMergeNode in="SourceGraphic"/></feMerge></filter>`:'';
-  const gattr=(id)=>primary.includes(id)?'filter="url(#glow-f)"':'';
-  return `<svg viewBox="0 0 120 260" width="100%" xmlns="http://www.w3.org/2000/svg">
-  <defs>${glow}</defs>
-  <!-- BODY OUTLINE (dark silhouette) -->
-  <!-- HEAD -->
-  <ellipse cx="60" cy="18" rx="13" ry="16" fill="#1a1a1a" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
-  <!-- NECK -->
-  <rect x="55" y="31" width="10" height="8" rx="3" fill="#1a1a1a"/>
-  <!-- TORSO -->
-  <path d="M35,39 Q28,42 26,56 L24,100 Q24,106 30,108 L90,108 Q96,106 96,100 L94,56 Q92,42 85,39 Z" fill="#1a1a1a" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
-  <!-- ARMS -->
-  <path d="M35,40 Q20,44 16,65 Q13,80 14,95 Q15,102 19,100 Q22,98 23,90 L26,56 Z" fill="#1a1a1a" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
-  <path d="M85,40 Q100,44 104,65 Q107,80 106,95 Q105,102 101,100 Q98,98 97,90 L94,56 Z" fill="#1a1a1a" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
-  <!-- FOREARMS -->
-  <path d="M14,95 Q12,105 11,118 Q11,124 14,124 Q18,124 19,118 L19,100 Z" fill="#1a1a1a"/>
-  <path d="M106,95 Q108,105 109,118 Q109,124 106,124 Q102,124 101,118 L101,100 Z" fill="#1a1a1a"/>
-  <!-- HIPS -->
-  <path d="M30,108 L24,130 L26,140 L94,140 L96,130 L90,108 Z" fill="#1a1a1a" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
-  <!-- THIGHS -->
-  <path d="M26,138 Q22,150 22,170 Q22,185 26,195 L44,195 Q48,185 48,170 Q48,150 44,138 Z" fill="#1a1a1a"/>
-  <path d="M94,138 Q98,150 98,170 Q98,185 94,195 L76,195 Q72,185 72,170 Q72,150 76,138 Z" fill="#1a1a1a"/>
-  <!-- LOWER LEGS -->
-  <path d="M26,195 Q24,210 24,225 Q24,235 28,238 L42,238 Q46,235 46,225 Q46,210 44,195 Z" fill="#1a1a1a"/>
-  <path d="M94,195 Q96,210 96,225 Q96,235 92,238 L78,238 Q74,235 74,225 Q74,210 76,195 Z" fill="#1a1a1a"/>
-  <!-- FEET -->
-  <ellipse cx="35" cy="242" rx="11" ry="6" fill="#1a1a1a"/>
-  <ellipse cx="85" cy="242" rx="11" ry="6" fill="#1a1a1a"/>
-
-  <!-- ── MUSCLE HIGHLIGHTS ── -->
-  <!-- UPPER CHEST -->
-  <path d="M37,42 Q38,36 60,35 Q82,36 83,42 L80,54 Q60,50 40,54 Z" fill="${f('upper-chest')}" ${gattr('upper-chest')} opacity="0.85"/>
-  <!-- MID CHEST -->
-  <path d="M40,54 Q60,50 80,54 L78,67 Q60,64 42,67 Z" fill="${f('mid-chest')}" ${gattr('mid-chest')} opacity="0.85"/>
-  <!-- LOWER CHEST -->
-  <path d="M42,67 Q60,64 78,67 L76,76 Q60,74 44,76 Z" fill="${f('lower-chest')}" ${gattr('lower-chest')} opacity="0.85"/>
-
-  <!-- FRONT DELT LEFT -->
-  <ellipse cx="34" cy="45" rx="7" ry="9" fill="${f('front-delt')}" ${gattr('front-delt')} opacity="0.85"/>
-  <!-- FRONT DELT RIGHT -->
-  <ellipse cx="86" cy="45" rx="7" ry="9" fill="${f('front-delt')}" opacity="0.85"/>
-
-  <!-- SIDE DELT LEFT -->
-  <ellipse cx="26" cy="50" rx="6" ry="7" fill="${f('side-delt')}" ${gattr('side-delt')} opacity="0.85"/>
-  <!-- SIDE DELT RIGHT -->
-  <ellipse cx="94" cy="50" rx="6" ry="7" fill="${f('side-delt')}" opacity="0.85"/>
-
-  <!-- BICEP LONG HEAD (outer) LEFT -->
-  <path d="M16,58 Q13,65 14,78 L17,78 Q18,65 19,58 Z" fill="${f('bicep-long')}" ${gattr('bicep-long')} opacity="0.9"/>
-  <!-- BICEP LONG HEAD RIGHT -->
-  <path d="M104,58 Q107,65 106,78 L103,78 Q102,65 101,58 Z" fill="${f('bicep-long')}" opacity="0.9"/>
-  <!-- BICEP SHORT HEAD (inner) LEFT -->
-  <path d="M19,58 Q22,65 22,78 L17,78 Q16,65 16,58 Z" fill="${f('bicep-short')}" ${gattr('bicep-short')} opacity="0.9"/>
-  <!-- BICEP SHORT HEAD RIGHT -->
-  <path d="M101,58 Q98,65 98,78 L103,78 Q104,65 104,58 Z" fill="${f('bicep-short')}" opacity="0.9"/>
-
-  <!-- FOREARMS LEFT -->
-  <path d="M12,97 Q11,110 12,120 L17,120 Q18,110 18,97 Z" fill="${f('forearms')}" ${gattr('forearms')} opacity="0.85"/>
-  <!-- FOREARMS RIGHT -->
-  <path d="M108,97 Q109,110 108,120 L103,120 Q102,110 102,97 Z" fill="${f('forearms')}" opacity="0.85"/>
-
-  <!-- UPPER ABS -->
-  <path d="M44,78 Q60,76 76,78 L75,92 Q60,90 45,92 Z" fill="${f('upper-abs')}" ${gattr('upper-abs')} opacity="0.8"/>
-  <!-- LOWER ABS -->
-  <path d="M45,92 Q60,90 75,92 L74,106 Q60,104 46,106 Z" fill="${f('lower-abs')}" ${gattr('lower-abs')} opacity="0.8"/>
-  <!-- OBLIQUES LEFT -->
-  <path d="M35,70 Q38,78 38,100 L42,100 Q42,78 39,70 Z" fill="${f('obliques')}" ${gattr('obliques')} opacity="0.85"/>
-  <!-- OBLIQUES RIGHT -->
-  <path d="M85,70 Q82,78 82,100 L78,100 Q78,78 81,70 Z" fill="${f('obliques')}" opacity="0.85"/>
-  <!-- SERRATUS LEFT -->
-  <path d="M37,60 Q35,70 36,80 Q38,78 40,76 Q40,66 38,58 Z" fill="${f('serratus')}" ${gattr('serratus')} opacity="0.8"/>
-
-  <!-- QUAD RECTUS LEFT -->
-  <path d="M28,143 Q26,158 27,178 Q28,188 33,192 Q37,180 36,162 Q36,148 33,141 Z" fill="${f('quad-rectus')}" ${gattr('quad-rectus')} opacity="0.85"/>
-  <!-- QUAD RECTUS RIGHT -->
-  <path d="M92,143 Q94,158 93,178 Q92,188 87,192 Q83,180 84,162 Q84,148 87,141 Z" fill="${f('quad-rectus')}" opacity="0.85"/>
-  <!-- VASTUS LATERALIS LEFT (outer) -->
-  <path d="M26,148 Q23,162 24,180 L28,178 Q27,162 28,148 Z" fill="${f('quad-vastus-l')}" ${gattr('quad-vastus-l')} opacity="0.85"/>
-  <!-- VASTUS LATERALIS RIGHT -->
-  <path d="M94,148 Q97,162 96,180 L92,178 Q93,162 92,148 Z" fill="${f('quad-vastus-l')}" opacity="0.85"/>
-  <!-- VASTUS MEDIALIS LEFT (inner, teardrop) -->
-  <ellipse cx="40" cy="188" rx="6" ry="8" fill="${f('quad-vastus-m')}" ${gattr('quad-vastus-m')} opacity="0.85"/>
-  <!-- VASTUS MEDIALIS RIGHT -->
-  <ellipse cx="80" cy="188" rx="6" ry="8" fill="${f('quad-vastus-m')}" opacity="0.85"/>
-
-  <!-- ADDUCTORS LEFT -->
-  <path d="M40,143 Q42,158 42,175 L36,175 Q36,158 34,143 Z" fill="${f('adductors')}" ${gattr('adductors')} opacity="0.8"/>
-  <!-- ADDUCTORS RIGHT -->
-  <path d="M80,143 Q78,158 78,175 L84,175 Q84,158 86,143 Z" fill="${f('adductors')}" opacity="0.8"/>
-
-  <!-- CALVES GASTROCNEMIUS LEFT -->
-  <path d="M26,198 Q24,212 25,228 Q28,235 32,234 Q36,228 35,212 Q33,200 30,198 Z" fill="${f('calves-gastro')}" ${gattr('calves-gastro')} opacity="0.85"/>
-  <!-- CALVES GASTRO RIGHT -->
-  <path d="M94,198 Q96,212 95,228 Q92,235 88,234 Q84,228 85,212 Q87,200 90,198 Z" fill="${f('calves-gastro')}" opacity="0.85"/>
-  <!-- SOLEUS LEFT (behind gastro — show as side strip) -->
-  <path d="M24,210 Q23,222 24,232 L26,230 Q25,220 25,210 Z" fill="${f('calves-soleus')}" ${gattr('calves-soleus')} opacity="0.8"/>
-
-  <!-- HIP FLEXORS -->
-  <path d="M40,128 Q42,136 44,142 L36,142 Q36,136 36,128 Z" fill="${f('hip-flexors')}" ${gattr('hip-flexors')} opacity="0.8"/>
-  <path d="M80,128 Q78,136 76,142 L84,142 Q84,136 84,128 Z" fill="${f('hip-flexors')}" opacity="0.8"/>
+  const m=(id)=>mAttr(id,primary,secondary);
+  return `<svg viewBox="0 0 160 380" width="100%" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <!-- Skin base gradient -->
+  <linearGradient id="skin-f" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#2a1f1a"/>
+    <stop offset="35%" stop-color="#3d2d24"/>
+    <stop offset="65%" stop-color="#3d2d24"/>
+    <stop offset="100%" stop-color="#2a1f1a"/>
+  </linearGradient>
+  <!-- Skin torso gradient -->
+  <linearGradient id="skin-torso" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#2a1f1a"/>
+    <stop offset="30%" stop-color="#4a3528"/>
+    <stop offset="50%" stop-color="#52392b"/>
+    <stop offset="70%" stop-color="#4a3528"/>
+    <stop offset="100%" stop-color="#2a1f1a"/>
+  </linearGradient>
+  <!-- Active muscle gradient (orange) -->
+  <linearGradient id="mg-active" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#FF9A5C"/>
+    <stop offset="40%" stop-color="#FF6B35"/>
+    <stop offset="100%" stop-color="#CC4400"/>
+  </linearGradient>
+  <!-- Secondary muscle gradient -->
+  <linearGradient id="mg-secondary" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="rgba(255,150,80,0.55)"/>
+    <stop offset="100%" stop-color="rgba(180,70,0,0.4)"/>
+  </linearGradient>
+  <!-- Rest muscle -->
+  <linearGradient id="mg-rest" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="rgba(255,255,255,0.09)"/>
+    <stop offset="100%" stop-color="rgba(255,255,255,0.03)"/>
+  </linearGradient>
+  <!-- Leg skin -->
+  <linearGradient id="skin-leg-l" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#2a1f1a"/>
+    <stop offset="40%" stop-color="#3d2d24"/>
+    <stop offset="100%" stop-color="#2e2218"/>
+  </linearGradient>
+  <linearGradient id="skin-leg-r" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#2e2218"/>
+    <stop offset="60%" stop-color="#3d2d24"/>
+    <stop offset="100%" stop-color="#2a1f1a"/>
+  </linearGradient>
+  <!-- Glow filter for active muscles -->
+  <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur stdDeviation="2" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <!-- Definition lines (subtle muscle separations) -->
+  <filter id="def-line">
+    <feGaussianBlur stdDeviation="0.3"/>
+  </filter>
+</defs>
+ 
+<!-- ══════════ BODY BASE SHAPES ══════════ -->
+<!-- HEAD -->
+<ellipse cx="80" cy="22" rx="17" ry="20" fill="url(#skin-f)" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+<!-- Jaw definition -->
+<path d="M65,32 Q80,40 95,32" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
+<!-- Ear L -->
+<ellipse cx="63" cy="22" rx="3" ry="5" fill="#2e2218"/>
+<!-- Ear R -->
+<ellipse cx="97" cy="22" rx="3" ry="5" fill="#2e2218"/>
+ 
+<!-- NECK -->
+<path d="M72,39 Q80,41 88,39 L89,52 Q80,55 71,52 Z" fill="url(#skin-torso)" stroke="rgba(0,0,0,0.4)" stroke-width="0.4"/>
+<!-- Neck SCM lines -->
+<path d="M75,40 Q74,46 73,52" fill="none" stroke="rgba(0,0,0,0.25)" stroke-width="0.6"/>
+<path d="M85,40 Q86,46 87,52" fill="none" stroke="rgba(0,0,0,0.25)" stroke-width="0.6"/>
+ 
+<!-- TRAPEZIUS BASE (slopes from neck to shoulders) -->
+<path d="M71,42 Q60,44 50,52 L53,58 Q62,51 80,50 Q98,51 107,58 L110,52 Q100,44 89,42 Q80,39 71,42 Z" fill="url(#skin-torso)" stroke="rgba(0,0,0,0.3)" stroke-width="0.3"/>
+ 
+<!-- UPPER TORSO / CHEST BASE -->
+<path d="M50,52 Q38,56 36,72 L36,100 Q37,108 44,112 L116,112 Q123,108 124,100 L124,72 Q122,56 110,52 L89,48 Q80,46 71,48 Z" fill="url(#skin-torso)" stroke="rgba(0,0,0,0.3)" stroke-width="0.3"/>
+ 
+<!-- LEFT ARM UPPER (bicep/tricep region) -->
+<path d="M50,54 Q36,58 30,72 Q26,84 27,100 Q28,108 33,110 Q38,108 40,100 Q42,86 44,72 Q47,60 52,56 Z" fill="url(#skin-f)" stroke="rgba(0,0,0,0.25)" stroke-width="0.3"/>
+<!-- RIGHT ARM UPPER -->
+<path d="M110,54 Q124,58 130,72 Q134,84 133,100 Q132,108 127,110 Q122,108 120,100 Q118,86 116,72 Q113,60 108,56 Z" fill="url(#skin-f)" stroke="rgba(0,0,0,0.25)" stroke-width="0.3"/>
+ 
+<!-- LEFT FOREARM -->
+<path d="M27,100 Q24,114 24,128 Q24,136 27,138 Q31,138 33,136 Q36,128 36,114 L33,110 Z" fill="url(#skin-f)" stroke="rgba(0,0,0,0.2)" stroke-width="0.3"/>
+<!-- RIGHT FOREARM -->
+<path d="M133,100 Q136,114 136,128 Q136,136 133,138 Q129,138 127,136 Q124,128 124,114 L127,110 Z" fill="url(#skin-f)" stroke="rgba(0,0,0,0.2)" stroke-width="0.3"/>
+<!-- Forearm tendon lines L -->
+<path d="M27,104 Q26,114 26,124" fill="none" stroke="rgba(0,0,0,0.2)" stroke-width="0.5"/>
+<path d="M31,103 Q31,114 31,126" fill="none" stroke="rgba(0,0,0,0.2)" stroke-width="0.5"/>
+<!-- Forearm tendon lines R -->
+<path d="M133,104 Q134,114 134,124" fill="none" stroke="rgba(0,0,0,0.2)" stroke-width="0.5"/>
+<path d="M129,103 Q129,114 129,126" fill="none" stroke="rgba(0,0,0,0.2)" stroke-width="0.5"/>
+ 
+<!-- HANDS L -->
+<ellipse cx="29" cy="142" rx="7" ry="8" fill="#2e2218" stroke="rgba(0,0,0,0.3)" stroke-width="0.4"/>
+<!-- HANDS R -->
+<ellipse cx="131" cy="142" rx="7" ry="8" fill="#2e2218" stroke="rgba(0,0,0,0.3)" stroke-width="0.4"/>
+ 
+<!-- LOWER TORSO / ABS / OBLIQUES -->
+<path d="M44,112 L36,140 Q37,148 44,152 L116,152 Q123,148 124,140 L116,112 Z" fill="url(#skin-torso)" stroke="rgba(0,0,0,0.3)" stroke-width="0.3"/>
+ 
+<!-- HIP/PELVIS -->
+<path d="M36,148 Q32,158 33,165 L127,165 Q128,158 124,148 Z" fill="url(#skin-torso)" stroke="rgba(0,0,0,0.3)" stroke-width="0.3"/>
+ 
+<!-- LEFT THIGH -->
+<path d="M33,163 Q26,172 26,196 Q27,216 33,226 Q40,228 48,224 Q54,214 53,192 Q52,172 47,163 Z" fill="url(#skin-leg-l)" stroke="rgba(0,0,0,0.25)" stroke-width="0.3"/>
+<!-- RIGHT THIGH -->
+<path d="M127,163 Q134,172 134,196 Q133,216 127,226 Q120,228 112,224 Q106,214 107,192 Q108,172 113,163 Z" fill="url(#skin-leg-r)" stroke="rgba(0,0,0,0.25)" stroke-width="0.3"/>
+ 
+<!-- LEFT LOWER LEG (shin+calf) -->
+<path d="M33,226 Q28,238 28,254 Q29,264 33,268 Q39,270 44,266 Q48,258 48,246 Q48,234 47,224 Z" fill="url(#skin-leg-l)" stroke="rgba(0,0,0,0.2)" stroke-width="0.3"/>
+<!-- RIGHT LOWER LEG -->
+<path d="M127,226 Q132,238 132,254 Q131,264 127,268 Q121,270 116,266 Q112,258 112,246 Q112,234 113,224 Z" fill="url(#skin-leg-r)" stroke="rgba(0,0,0,0.2)" stroke-width="0.3"/>
+ 
+<!-- FEET L -->
+<path d="M29,268 Q24,270 22,274 Q24,278 34,278 Q40,277 43,274 Q41,268 33,268 Z" fill="#2a1f1a" stroke="rgba(0,0,0,0.3)" stroke-width="0.4"/>
+<!-- FEET R -->
+<path d="M131,268 Q136,270 138,274 Q136,278 126,278 Q120,277 117,274 Q119,268 127,268 Z" fill="#2a1f1a" stroke="rgba(0,0,0,0.3)" stroke-width="0.4"/>
+ 
+<!-- ══════════ MUSCLE GROUPS (front) ══════════ -->
+ 
+<!-- UPPER CHEST (clavicular pec) L+R -->
+<path d="M54,54 Q80,50 80,50 L80,70 Q68,67 54,72 Z" ${m('upper-chest')} rx="2"/>
+<path d="M106,54 Q80,50 80,50 L80,70 Q92,67 106,72 Z" ${m('upper-chest')} rx="2"/>
+<!-- MID CHEST L -->
+<path d="M54,72 Q68,67 80,70 L79,88 Q66,86 52,90 Z" ${m('mid-chest')}/>
+<!-- MID CHEST R -->
+<path d="M106,72 Q92,67 80,70 L81,88 Q94,86 108,90 Z" ${m('mid-chest')}/>
+<!-- LOWER CHEST L -->
+<path d="M52,90 Q66,86 79,88 L76,100 Q64,99 50,104 Z" ${m('lower-chest')}/>
+<!-- LOWER CHEST R -->
+<path d="M108,90 Q94,86 81,88 L84,100 Q96,99 110,104 Z" ${m('lower-chest')}/>
+<!-- Chest center division line -->
+<path d="M80,50 L80,104" fill="none" stroke="rgba(0,0,0,0.4)" stroke-width="0.7"/>
+<!-- Chest lower crease -->
+<path d="M50,104 Q66,100 80,101 Q94,100 110,104" fill="none" stroke="rgba(0,0,0,0.35)" stroke-width="0.7"/>
+ 
+<!-- FRONT DELT L -->
+<path d="M50,52 Q42,54 37,60 Q34,68 37,74 Q42,70 48,66 Q52,61 54,54 Z" ${m('front-delt')}/>
+<!-- FRONT DELT R -->
+<path d="M110,52 Q118,54 123,60 Q126,68 123,74 Q118,70 112,66 Q108,61 106,54 Z" ${m('front-delt')}/>
+<!-- Delt definition line L -->
+<path d="M50,52 Q45,62 46,72" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
+<path d="M110,52 Q115,62 114,72" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
+ 
+<!-- SIDE DELT L -->
+<path d="M36,60 Q30,66 30,76 Q32,82 36,82 Q40,76 40,68 Q38,62 36,60 Z" ${m('side-delt')}/>
+<!-- SIDE DELT R -->
+<path d="M124,60 Q130,66 130,76 Q128,82 124,82 Q120,76 120,68 Q122,62 124,60 Z" ${m('side-delt')}/>
+ 
+<!-- BICEP LONG HEAD L (outer peak) -->
+<path d="M30,76 Q27,84 27,96 Q28,104 32,106 Q36,104 38,96 Q40,84 38,76 Q34,72 30,76 Z" ${m('bicep-long')}/>
+<!-- BICEP SHORT HEAD L (inner) -->
+<path d="M38,76 Q42,82 44,96 Q43,104 40,106 Q37,104 36,96 Q36,84 38,76 Z" ${m('bicep-short')}/>
+<!-- Bicep peak line L -->
+<path d="M34,76 Q32,86 33,100" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
+<!-- BICEP LONG HEAD R -->
+<path d="M130,76 Q133,84 133,96 Q132,104 128,106 Q124,104 122,96 Q120,84 122,76 Q126,72 130,76 Z" ${m('bicep-long')}/>
+<!-- BICEP SHORT HEAD R -->
+<path d="M122,76 Q118,82 116,96 Q117,104 120,106 Q123,104 124,96 Q124,84 122,76 Z" ${m('bicep-short')}/>
+<!-- Bicep peak line R -->
+<path d="M126,76 Q128,86 127,100" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
+ 
+<!-- FOREARMS L -->
+<path d="M25,102 Q22,114 23,128 Q25,136 30,136 Q34,132 34,120 Q35,108 33,102 Z" ${m('forearms')}/>
+<!-- FOREARMS R -->
+<path d="M135,102 Q138,114 137,128 Q135,136 130,136 Q126,132 126,120 Q125,108 127,102 Z" ${m('forearms')}/>
+ 
+<!-- UPPER ABS (2 visible blocks) L -->
+<path d="M60,104 Q68,102 75,103 L74,116 Q67,115 59,117 Z" ${m('upper-abs')}/>
+<!-- UPPER ABS R -->
+<path d="M100,104 Q92,102 85,103 L86,116 Q93,115 101,117 Z" ${m('upper-abs')}/>
+<!-- LOWER ABS L -->
+<path d="M59,117 Q67,115 74,116 L73,130 Q66,129 58,131 Z" ${m('lower-abs')}/>
+<!-- LOWER ABS R -->
+<path d="M101,117 Q93,115 86,116 L87,130 Q94,129 102,131 Z" ${m('lower-abs')}/>
+<!-- Abs center line -->
+<path d="M80,103 L80,148" fill="none" stroke="rgba(0,0,0,0.35)" stroke-width="0.7"/>
+<!-- Abs horizontal lines -->
+<path d="M59,117 Q80,115 101,117" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.6"/>
+<path d="M58,131 Q80,129 102,131" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.6"/>
+<!-- Abs segmentation L/R -->
+<path d="M59,103 L59,148" fill="none" stroke="rgba(0,0,0,0.2)" stroke-width="0.4"/>
+<path d="M101,103 L101,148" fill="none" stroke="rgba(0,0,0,0.2)" stroke-width="0.4"/>
+ 
+<!-- OBLIQUES L -->
+<path d="M44,104 Q48,112 50,126 Q51,136 48,144 Q44,148 42,144 Q38,136 38,122 Q38,110 42,104 Z" ${m('obliques')}/>
+<!-- OBLIQUES R -->
+<path d="M116,104 Q112,112 110,126 Q109,136 112,144 Q116,148 118,144 Q122,136 122,122 Q122,110 118,104 Z" ${m('obliques')}/>
+<!-- Serratus finger lines L -->
+<path d="M50,90 Q46,96 46,104" fill="none" stroke="${primary.includes('serratus')?'rgba(255,107,53,0.6)':'rgba(255,255,255,0.06)'}" stroke-width="0.6"/>
+<path d="M48,96 Q44,102 44,110" fill="none" stroke="${primary.includes('serratus')?'rgba(255,107,53,0.6)':'rgba(255,255,255,0.06)'}" stroke-width="0.6"/>
+<!-- SERRATUS L -->
+<path d="M50,86 Q44,90 42,104 Q46,108 50,104 Q54,96 54,88 Z" ${m('serratus')}/>
+<!-- SERRATUS R -->
+<path d="M110,86 Q116,90 118,104 Q114,108 110,104 Q106,96 106,88 Z" ${m('serratus')}/>
+ 
+<!-- HIP FLEXORS L -->
+<path d="M38,148 Q38,156 40,163 Q44,167 50,165 Q52,158 50,150 Q47,144 42,144 Z" ${m('hip-flexors')}/>
+<!-- HIP FLEXORS R -->
+<path d="M122,148 Q122,156 120,163 Q116,167 110,165 Q108,158 110,150 Q113,144 118,144 Z" ${m('hip-flexors')}/>
+ 
+<!-- QUAD RECTUS FEMORIS L (center, long) -->
+<path d="M46,165 Q42,178 41,200 Q41,216 45,224 Q50,224 54,220 Q57,208 56,192 Q55,176 52,165 Z" ${m('quad-rectus')}/>
+<!-- QUAD RECTUS R -->
+<path d="M114,165 Q118,178 119,200 Q119,216 115,224 Q110,224 106,220 Q103,208 104,192 Q105,176 108,165 Z" ${m('quad-rectus')}/>
+<!-- VASTUS LATERALIS L (outer thigh) -->
+<path d="M34,165 Q28,178 28,198 Q28,214 32,222 Q38,224 42,220 Q44,208 44,190 Q44,174 38,165 Z" ${m('quad-vastus-l')}/>
+<!-- VASTUS LATERALIS R -->
+<path d="M126,165 Q132,178 132,198 Q132,214 128,222 Q122,224 118,220 Q116,208 116,190 Q116,174 122,165 Z" ${m('quad-vastus-l')}/>
+<!-- VASTUS MEDIALIS L (teardrop inner knee) -->
+<path d="M52,210 Q56,218 54,226 Q50,228 46,224 Q44,218 46,210 Q49,207 52,210 Z" ${m('quad-vastus-m')}/>
+<!-- VASTUS MEDIALIS R -->
+<path d="M108,210 Q104,218 106,226 Q110,228 114,224 Q116,218 114,210 Q111,207 108,210 Z" ${m('quad-vastus-m')}/>
+<!-- Quad separation lines L -->
+<path d="M46,165 Q44,190 45,218" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
+<path d="M52,165 Q54,190 53,218" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
+<!-- Quad separation lines R -->
+<path d="M114,165 Q116,190 115,218" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
+<path d="M108,165 Q106,190 107,218" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
+ 
+<!-- ADDUCTORS L (inner thigh) -->
+<path d="M52,165 Q55,178 56,200 Q55,214 52,220 Q48,222 46,218 Q46,204 47,185 Q47,172 50,165 Z" ${m('adductors')}/>
+<!-- ADDUCTORS R -->
+<path d="M108,165 Q105,178 104,200 Q105,214 108,220 Q112,222 114,218 Q114,204 113,185 Q113,172 110,165 Z" ${m('adductors')}/>
+ 
+<!-- CALVES GASTRO L (two heads visible) -->
+<path d="M30,228 Q26,240 26,256 Q27,264 31,266 Q36,266 39,260 Q42,250 40,236 Q37,228 33,226 Z" ${m('calves-gastro')}/>
+<!-- CALVES GASTRO R -->
+<path d="M130,228 Q134,240 134,256 Q133,264 129,266 Q124,266 121,260 Q118,250 120,236 Q123,228 127,226 Z" ${m('calves-gastro')}/>
+<!-- Gastro split line L -->
+<path d="M35,228 Q35,248 34,262" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
+<!-- Gastro split line R -->
+<path d="M125,228 Q125,248 126,262" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
+<!-- SOLEUS L (lateral, visible beside gastro) -->
+<path d="M40,236 Q44,246 44,260 Q42,266 38,266 Q36,262 36,252 Q36,240 38,234 Z" ${m('calves-soleus')}/>
+<!-- SOLEUS R -->
+<path d="M120,236 Q116,246 116,260 Q118,266 122,266 Q124,262 124,252 Q124,240 122,234 Z" ${m('calves-soleus')}/>
+<!-- Shin tibialis L -->
+<path d="M42,228 Q44,244 43,262" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="0.8"/>
+<!-- Shin tibialis R -->
+<path d="M118,228 Q116,244 117,262" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="0.8"/>
 </svg>`;
 }
-
+ 
 function buildBackSVG(primary, secondary){
-  const f=(id)=>mFill(id,primary,secondary);
-  const gattr=(id)=>primary.includes(id)?'filter="url(#glow-b)"':'';
-  const glow=primary.length>0?`<filter id="glow-b"><feGaussianBlur stdDeviation="2.5" result="cb"/><feMerge><feMergeNode in="cb"/><feMergeNode in="SourceGraphic"/></feMerge></filter>`:'';
-  return `<svg viewBox="0 0 120 260" width="100%" xmlns="http://www.w3.org/2000/svg">
-  <defs>${glow}</defs>
-  <!-- BODY OUTLINE -->
-  <ellipse cx="60" cy="18" rx="13" ry="16" fill="#1a1a1a" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/>
-  <rect x="55" y="31" width="10" height="8" rx="3" fill="#1a1a1a"/>
-  <path d="M35,39 Q28,42 26,56 L24,100 Q24,106 30,108 L90,108 Q96,106 96,100 L94,56 Q92,42 85,39 Z" fill="#1a1a1a" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
-  <path d="M35,40 Q20,44 16,65 Q13,80 14,95 Q15,102 19,100 Q22,98 23,90 L26,56 Z" fill="#1a1a1a"/>
-  <path d="M85,40 Q100,44 104,65 Q107,80 106,95 Q105,102 101,100 Q98,98 97,90 L94,56 Z" fill="#1a1a1a"/>
-  <path d="M14,95 Q12,105 11,118 Q11,124 14,124 Q18,124 19,118 L19,100 Z" fill="#1a1a1a"/>
-  <path d="M106,95 Q108,105 109,118 Q109,124 106,124 Q102,124 101,118 L101,100 Z" fill="#1a1a1a"/>
-  <path d="M30,108 L24,130 L26,140 L94,140 L96,130 L90,108 Z" fill="#1a1a1a"/>
-  <path d="M26,138 Q22,150 22,170 Q22,185 26,195 L44,195 Q48,185 48,170 Q48,150 44,138 Z" fill="#1a1a1a"/>
-  <path d="M94,138 Q98,150 98,170 Q98,185 94,195 L76,195 Q72,185 72,170 Q72,150 76,138 Z" fill="#1a1a1a"/>
-  <path d="M26,195 Q24,210 24,225 Q24,235 28,238 L42,238 Q46,235 46,225 Q46,210 44,195 Z" fill="#1a1a1a"/>
-  <path d="M94,195 Q96,210 96,225 Q96,235 92,238 L78,238 Q74,235 74,225 Q74,210 76,195 Z" fill="#1a1a1a"/>
-  <ellipse cx="35" cy="242" rx="11" ry="6" fill="#1a1a1a"/>
-  <ellipse cx="85" cy="242" rx="11" ry="6" fill="#1a1a1a"/>
-
-  <!-- ── BACK MUSCLE HIGHLIGHTS ── -->
-  <!-- UPPER TRAPS -->
-  <path d="M46,36 Q60,32 74,36 L72,46 Q60,43 48,46 Z" fill="${f('upper-traps')}" ${gattr('upper-traps')} opacity="0.85"/>
-  <!-- MID TRAPS (diamond shape centre) -->
-  <path d="M38,50 Q49,46 60,44 Q71,46 82,50 L78,68 Q60,64 42,68 Z" fill="${f('mid-traps')}" ${gattr('mid-traps')} opacity="0.8"/>
-  <!-- RHOMBOIDS (under traps, between shoulder blades) -->
-  <path d="M44,54 Q60,50 76,54 L74,70 Q60,67 46,70 Z" fill="${f('rhomboids')}" ${gattr('rhomboids')} opacity="0.85"/>
-
-  <!-- REAR DELT LEFT -->
-  <ellipse cx="34" cy="46" rx="7" ry="8" fill="${f('rear-delt')}" ${gattr('rear-delt')} opacity="0.85"/>
-  <!-- REAR DELT RIGHT -->
-  <ellipse cx="86" cy="46" rx="7" ry="8" fill="${f('rear-delt')}" opacity="0.85"/>
-
-  <!-- LATS UPPER LEFT -->
-  <path d="M28,50 Q30,60 30,80 L36,80 Q35,60 36,50 Z" fill="${f('lats-upper')}" ${gattr('lats-upper')} opacity="0.85"/>
-  <!-- LATS UPPER RIGHT -->
-  <path d="M92,50 Q90,60 90,80 L84,80 Q85,60 84,50 Z" fill="${f('lats-upper')}" opacity="0.85"/>
-  <!-- LATS LOWER LEFT -->
-  <path d="M30,80 Q29,90 30,104 L36,104 Q36,90 36,80 Z" fill="${f('lats-lower')}" ${gattr('lats-lower')} opacity="0.85"/>
-  <!-- LATS LOWER RIGHT -->
-  <path d="M90,80 Q91,90 90,104 L84,104 Q84,90 84,80 Z" fill="${f('lats-lower')}" opacity="0.85"/>
-
-  <!-- TERES MAJOR LEFT -->
-  <ellipse cx="32" cy="62" rx="5" ry="8" fill="${f('teres')}" ${gattr('teres')} opacity="0.85"/>
-  <!-- TERES MAJOR RIGHT -->
-  <ellipse cx="88" cy="62" rx="5" ry="8" fill="${f('teres')}" opacity="0.85"/>
-
-  <!-- LOWER BACK (erectors) -->
-  <path d="M46,72 Q50,72 54,72 L54,106 L46,106 Z" fill="${f('lower-back')}" ${gattr('lower-back')} opacity="0.8"/>
-  <path d="M74,72 Q70,72 66,72 L66,106 L74,106 Z" fill="${f('lower-back')}" opacity="0.8"/>
-
-  <!-- TRICEP LONG HEAD LEFT (back of arm, top) -->
-  <path d="M16,52 Q14,60 14,74 L17,74 Q18,60 18,52 Z" fill="${f('tricep-long')}" ${gattr('tricep-long')} opacity="0.9"/>
-  <!-- TRICEP LONG RIGHT -->
-  <path d="M104,52 Q106,60 106,74 L103,74 Q102,60 102,52 Z" fill="${f('tricep-long')}" opacity="0.9"/>
-  <!-- TRICEP LATERAL LEFT (outer head) -->
-  <path d="M17,74 Q16,84 16,94 L19,92 Q19,82 18,74 Z" fill="${f('tricep-lateral')}" ${gattr('tricep-lateral')} opacity="0.9"/>
-  <!-- TRICEP LATERAL RIGHT -->
-  <path d="M103,74 Q104,84 104,94 L101,92 Q101,82 102,74 Z" fill="${f('tricep-lateral')}" opacity="0.9"/>
-  <!-- TRICEP MEDIAL LEFT (inner, small) -->
-  <path d="M18,74 Q20,84 20,92 L17,92 Q16,84 17,74 Z" fill="${f('tricep-medial')}" ${gattr('tricep-medial')} opacity="0.85"/>
-  <!-- TRICEP MEDIAL RIGHT -->
-  <path d="M102,74 Q100,84 100,92 L103,92 Q104,84 103,74 Z" fill="${f('tricep-medial')}" opacity="0.85"/>
-
-  <!-- GLUTE MAX LEFT -->
-  <path d="M28,112 Q24,124 24,136 L44,136 Q46,124 44,112 Z" fill="${f('glute-max')}" ${gattr('glute-max')} opacity="0.85"/>
-  <!-- GLUTE MAX RIGHT -->
-  <path d="M92,112 Q96,124 96,136 L76,136 Q74,124 76,112 Z" fill="${f('glute-max')}" opacity="0.85"/>
-  <!-- GLUTE MED LEFT -->
-  <path d="M26,108 Q24,116 26,122 L34,118 Q32,112 30,108 Z" fill="${f('glute-med')}" ${gattr('glute-med')} opacity="0.8"/>
-  <!-- GLUTE MED RIGHT -->
-  <path d="M94,108 Q96,116 94,122 L86,118 Q88,112 90,108 Z" fill="${f('glute-med')}" opacity="0.8"/>
-
-  <!-- HAMSTRING BICEP FEMORIS (outer) LEFT -->
-  <path d="M26,142 Q24,158 25,176 L30,176 Q30,158 28,142 Z" fill="${f('hamstring-bicep')}" ${gattr('hamstring-bicep')} opacity="0.85"/>
-  <!-- HAMSTRING BICEP RIGHT -->
-  <path d="M94,142 Q96,158 95,176 L90,176 Q90,158 92,142 Z" fill="${f('hamstring-bicep')}" opacity="0.85"/>
-  <!-- SEMITENDINOSUS/SEMIMEMBRANOSUS (inner) LEFT -->
-  <path d="M36,142 Q38,158 38,176 L32,176 Q32,158 31,142 Z" fill="${f('hamstring-semi')}" ${gattr('hamstring-semi')} opacity="0.85"/>
-  <!-- SEMI RIGHT -->
-  <path d="M84,142 Q82,158 82,176 L88,176 Q88,158 89,142 Z" fill="${f('hamstring-semi')}" opacity="0.85"/>
-
-  <!-- CALVES GASTRO LEFT (back view) -->
-  <path d="M26,198 Q24,212 25,228 Q28,234 32,233 Q36,226 35,210 Q32,200 28,198 Z" fill="${f('calves-gastro')}" ${gattr('calves-gastro')} opacity="0.85"/>
-  <!-- CALVES GASTRO RIGHT -->
-  <path d="M94,198 Q96,212 95,228 Q92,234 88,233 Q84,226 85,210 Q88,200 92,198 Z" fill="${f('calves-gastro')}" opacity="0.85"/>
-  <!-- SOLEUS LEFT -->
-  <path d="M25,216 Q24,226 25,234 L28,234 Q27,226 27,216 Z" fill="${f('calves-soleus')}" ${gattr('calves-soleus')} opacity="0.8"/>
-  <!-- SOLEUS RIGHT -->
-  <path d="M95,216 Q96,226 95,234 L92,234 Q93,226 93,216 Z" fill="${f('calves-soleus')}" opacity="0.8"/>
+  const m=(id)=>mAttr(id,primary,secondary);
+  return `<svg viewBox="0 0 160 380" width="100%" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="skin-b" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#2a1f1a"/>
+    <stop offset="35%" stop-color="#3d2d24"/>
+    <stop offset="65%" stop-color="#3d2d24"/>
+    <stop offset="100%" stop-color="#2a1f1a"/>
+  </linearGradient>
+  <linearGradient id="skin-tb" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#2a1f1a"/>
+    <stop offset="30%" stop-color="#4a3528"/>
+    <stop offset="50%" stop-color="#52392b"/>
+    <stop offset="70%" stop-color="#4a3528"/>
+    <stop offset="100%" stop-color="#2a1f1a"/>
+  </linearGradient>
+  <linearGradient id="mg-active" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#FF9A5C"/>
+    <stop offset="40%" stop-color="#FF6B35"/>
+    <stop offset="100%" stop-color="#CC4400"/>
+  </linearGradient>
+  <linearGradient id="mg-secondary" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="rgba(255,150,80,0.55)"/>
+    <stop offset="100%" stop-color="rgba(180,70,0,0.4)"/>
+  </linearGradient>
+  <linearGradient id="mg-rest" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="rgba(255,255,255,0.09)"/>
+    <stop offset="100%" stop-color="rgba(255,255,255,0.03)"/>
+  </linearGradient>
+  <linearGradient id="skin-leg-lb" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#2a1f1a"/>
+    <stop offset="40%" stop-color="#3d2d24"/>
+    <stop offset="100%" stop-color="#2e2218"/>
+  </linearGradient>
+  <linearGradient id="skin-leg-rb" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#2e2218"/>
+    <stop offset="60%" stop-color="#3d2d24"/>
+    <stop offset="100%" stop-color="#2a1f1a"/>
+  </linearGradient>
+  <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur stdDeviation="2" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+ 
+<!-- ══════════ BODY BASE (back view) ══════════ -->
+<!-- HEAD (back) -->
+<ellipse cx="80" cy="22" rx="17" ry="20" fill="url(#skin-b)" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/>
+<!-- Ear L (mirrored) -->
+<ellipse cx="63" cy="22" rx="3" ry="5" fill="#2e2218"/>
+<ellipse cx="97" cy="22" rx="3" ry="5" fill="#2e2218"/>
+ 
+<!-- NECK BACK -->
+<path d="M72,39 Q80,41 88,39 L89,52 Q80,55 71,52 Z" fill="url(#skin-tb)" stroke="rgba(0,0,0,0.4)" stroke-width="0.4"/>
+<!-- Neck spine line -->
+<path d="M80,41 L80,52" fill="none" stroke="rgba(0,0,0,0.35)" stroke-width="0.7"/>
+ 
+<!-- UPPER BACK BASE -->
+<path d="M50,52 Q38,56 36,72 L36,120 Q38,128 44,130 L116,130 Q122,128 124,120 L124,72 Q122,56 110,52 L89,48 Q80,46 71,48 Z" fill="url(#skin-tb)" stroke="rgba(0,0,0,0.3)" stroke-width="0.3"/>
+<!-- Spine line -->
+<path d="M80,52 L80,168" fill="none" stroke="rgba(0,0,0,0.4)" stroke-width="0.8"/>
+ 
+<!-- ARMS BACK L -->
+<path d="M50,54 Q36,58 30,72 Q26,84 27,100 Q28,108 33,110 Q38,108 40,100 Q42,86 44,72 Q47,60 52,56 Z" fill="url(#skin-b)" stroke="rgba(0,0,0,0.25)" stroke-width="0.3"/>
+<!-- ARMS BACK R -->
+<path d="M110,54 Q124,58 130,72 Q134,84 133,100 Q132,108 127,110 Q122,108 120,100 Q118,86 116,72 Q113,60 108,56 Z" fill="url(#skin-b)" stroke="rgba(0,0,0,0.25)" stroke-width="0.3"/>
+ 
+<!-- FOREARMS BACK L -->
+<path d="M27,100 Q24,114 24,128 Q24,136 27,138 Q31,138 33,136 Q36,128 36,114 L33,110 Z" fill="url(#skin-b)"/>
+<!-- FOREARMS BACK R -->
+<path d="M133,100 Q136,114 136,128 Q136,136 133,138 Q129,138 127,136 Q124,128 124,114 L127,110 Z" fill="url(#skin-b)"/>
+ 
+<!-- HANDS BACK L -->
+<ellipse cx="29" cy="142" rx="7" ry="8" fill="#2e2218"/>
+<!-- HANDS BACK R -->
+<ellipse cx="131" cy="142" rx="7" ry="8" fill="#2e2218"/>
+ 
+<!-- LOWER BACK / GLUTES BASE -->
+<path d="M44,130 L36,155 Q36,166 44,170 L116,170 Q124,166 124,155 L116,130 Z" fill="url(#skin-tb)" stroke="rgba(0,0,0,0.3)" stroke-width="0.3"/>
+ 
+<!-- THIGHS BACK L -->
+<path d="M33,168 Q26,178 26,202 Q27,218 33,228 Q40,230 48,226 Q54,216 53,196 Q52,176 47,168 Z" fill="url(#skin-leg-lb)"/>
+<!-- THIGHS BACK R -->
+<path d="M127,168 Q134,178 134,202 Q133,218 127,228 Q120,230 112,226 Q106,216 107,196 Q108,176 113,168 Z" fill="url(#skin-leg-rb)"/>
+ 
+<!-- LOWER LEGS BACK L -->
+<path d="M33,228 Q28,240 28,256 Q29,264 33,268 Q39,270 44,266 Q48,258 48,246 Q48,234 47,226 Z" fill="url(#skin-leg-lb)"/>
+<!-- LOWER LEGS BACK R -->
+<path d="M127,228 Q132,240 132,256 Q131,264 127,268 Q121,270 116,266 Q112,258 112,246 Q112,234 113,226 Z" fill="url(#skin-leg-rb)"/>
+ 
+<!-- FEET BACK L -->
+<path d="M29,268 Q24,270 22,274 Q24,278 34,278 Q40,277 43,274 Q41,268 33,268 Z" fill="#2a1f1a"/>
+<!-- FEET BACK R -->
+<path d="M131,268 Q136,270 138,274 Q136,278 126,278 Q120,277 117,274 Q119,268 127,268 Z" fill="#2a1f1a"/>
+ 
+<!-- ══════════ BACK MUSCLE GROUPS ══════════ -->
+ 
+<!-- UPPER TRAPS L (neck slope to shoulder) -->
+<path d="M71,42 Q64,46 58,52 L62,60 Q68,54 80,52 Z" ${m('upper-traps')}/>
+<!-- UPPER TRAPS R -->
+<path d="M89,42 Q96,46 102,52 L98,60 Q92,54 80,52 Z" ${m('upper-traps')}/>
+<!-- Trap center crease -->
+<path d="M80,42 L80,60" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
+ 
+<!-- MID TRAPS L (diamond, between shoulder blades) -->
+<path d="M38,60 Q56,56 80,58 L80,82 Q56,80 36,84 Z" ${m('mid-traps')}/>
+<!-- MID TRAPS R -->
+<path d="M122,60 Q104,56 80,58 L80,82 Q104,80 124,84 Z" ${m('mid-traps')}/>
+ 
+<!-- RHOMBOIDS L (under mid-traps, medial) -->
+<path d="M56,60 Q68,58 80,60 L80,80 Q68,78 54,82 Z" ${m('rhomboids')}/>
+<!-- RHOMBOIDS R -->
+<path d="M104,60 Q92,58 80,60 L80,80 Q92,78 106,82 Z" ${m('rhomboids')}/>
+<!-- Scapula outline L -->
+<path d="M52,58 Q50,70 52,84 Q58,88 64,84 Q66,72 62,60 Z" fill="none" stroke="rgba(0,0,0,0.2)" stroke-width="0.6"/>
+<!-- Scapula outline R -->
+<path d="M108,58 Q110,70 108,84 Q102,88 96,84 Q94,72 98,60 Z" fill="none" stroke="rgba(0,0,0,0.2)" stroke-width="0.6"/>
+ 
+<!-- REAR DELT L -->
+<path d="M36,56 Q30,60 30,72 Q32,80 38,82 Q44,78 46,68 Q46,58 42,54 Z" ${m('rear-delt')}/>
+<!-- REAR DELT R -->
+<path d="M124,56 Q130,60 130,72 Q128,80 122,82 Q116,78 114,68 Q114,58 118,54 Z" ${m('rear-delt')}/>
+<!-- Delt cap line L -->
+<path d="M36,56 Q38,68 40,76" fill="none" stroke="rgba(0,0,0,0.25)" stroke-width="0.5"/>
+<path d="M124,56 Q122,68 120,76" fill="none" stroke="rgba(0,0,0,0.25)" stroke-width="0.5"/>
+ 
+<!-- LATS UPPER L (wide sweep from armpit) -->
+<path d="M38,62 Q34,74 35,90 Q36,100 40,104 Q46,100 50,90 Q54,78 52,64 Z" ${m('lats-upper')}/>
+<!-- LATS UPPER R -->
+<path d="M122,62 Q126,74 125,90 Q124,100 120,104 Q114,100 110,90 Q106,78 108,64 Z" ${m('lats-upper')}/>
+<!-- LATS LOWER L -->
+<path d="M40,104 Q38,114 38,126 Q40,132 46,132 Q50,128 52,116 Q52,106 50,102 Z" ${m('lats-lower')}/>
+<!-- LATS LOWER R -->
+<path d="M120,104 Q122,114 122,126 Q120,132 114,132 Q110,128 108,116 Q108,106 110,102 Z" ${m('lats-lower')}/>
+<!-- Lat definition line L -->
+<path d="M40,64 Q38,90 40,120" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
+<path d="M120,64 Q122,90 120,120" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
+ 
+<!-- TERES MAJOR L -->
+<path d="M38,74 Q36,82 38,90 Q42,92 46,88 Q48,80 46,74 Q42,70 38,74 Z" ${m('teres')}/>
+<!-- TERES MAJOR R -->
+<path d="M122,74 Q124,82 122,90 Q118,92 114,88 Q112,80 114,74 Q118,70 122,74 Z" ${m('teres')}/>
+ 
+<!-- LOWER BACK ERECTORS L -->
+<path d="M68,84 Q62,90 62,116 Q64,126 68,128 Q72,126 74,116 Q74,90 72,84 Z" ${m('lower-back')}/>
+<!-- LOWER BACK ERECTORS R -->
+<path d="M92,84 Q98,90 98,116 Q96,126 92,128 Q88,126 86,116 Q86,90 88,84 Z" ${m('lower-back')}/>
+<!-- Lower back definition line -->
+<path d="M72,84 Q72,108 72,128" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
+<path d="M88,84 Q88,108 88,128" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
+ 
+<!-- TRICEP LONG HEAD L (largest, inner) -->
+<path d="M38,62 Q34,72 34,86 Q35,96 39,100 Q44,96 45,84 Q45,70 42,62 Z" ${m('tricep-long')}/>
+<!-- TRICEP LONG HEAD R -->
+<path d="M122,62 Q126,72 126,86 Q125,96 121,100 Q116,96 115,84 Q115,70 118,62 Z" ${m('tricep-long')}/>
+<!-- TRICEP LATERAL L (outer head) -->
+<path d="M30,68 Q28,78 29,92 Q31,100 35,100 Q38,94 38,80 Q38,70 35,66 Z" ${m('tricep-lateral')}/>
+<!-- TRICEP LATERAL R -->
+<path d="M130,68 Q132,78 131,92 Q129,100 125,100 Q122,94 122,80 Q122,70 125,66 Z" ${m('tricep-lateral')}/>
+<!-- TRICEP MEDIAL L -->
+<path d="M39,86 Q37,94 37,102 Q40,106 43,104 Q44,96 44,88 Z" ${m('tricep-medial')}/>
+<!-- TRICEP MEDIAL R -->
+<path d="M121,86 Q123,94 123,102 Q120,106 117,104 Q116,96 116,88 Z" ${m('tricep-medial')}/>
+<!-- Tricep horseshoe line L -->
+<path d="M35,68 Q32,84 34,100" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
+<path d="M42,62 Q44,82 43,102" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
+ 
+<!-- GLUTE MAX L (round, prominent) -->
+<path d="M36,134 Q30,144 30,158 Q31,168 38,170 Q48,170 54,162 Q58,150 56,138 Q52,130 44,130 Z" ${m('glute-max')}/>
+<!-- GLUTE MAX R -->
+<path d="M124,134 Q130,144 130,158 Q129,168 122,170 Q112,170 106,162 Q102,150 104,138 Q108,130 116,130 Z" ${m('glute-max')}/>
+<!-- Glute crease line -->
+<path d="M36,168 Q80,172 124,168" fill="none" stroke="rgba(0,0,0,0.35)" stroke-width="0.7"/>
+<!-- Glute center line -->
+<path d="M80,130 Q80,150 80,170" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.6"/>
+<!-- GLUTE MED L -->
+<path d="M34,126 Q30,132 30,142 Q34,146 40,144 Q44,138 44,130 Q40,124 34,126 Z" ${m('glute-med')}/>
+<!-- GLUTE MED R -->
+<path d="M126,126 Q130,132 130,142 Q126,146 120,144 Q116,138 116,130 Q120,124 126,126 Z" ${m('glute-med')}/>
+ 
+<!-- HAMSTRING BICEP FEMORIS L (outer, long) -->
+<path d="M30,170 Q26,184 26,204 Q27,218 32,226 Q38,226 42,220 Q44,208 43,190 Q42,176 36,170 Z" ${m('hamstring-bicep')}/>
+<!-- HAMSTRING BICEP R -->
+<path d="M130,170 Q134,184 134,204 Q133,218 128,226 Q122,226 118,220 Q116,208 117,190 Q118,176 124,170 Z" ${m('hamstring-bicep')}/>
+<!-- SEMIMEMBRANOSUS/SEMITENDINOSUS L (inner) -->
+<path d="M44,170 Q48,184 49,206 Q48,218 44,224 Q40,224 38,218 Q38,200 38,182 Q38,174 42,170 Z" ${m('hamstring-semi')}/>
+<!-- SEMI R -->
+<path d="M116,170 Q112,184 111,206 Q112,218 116,224 Q120,224 122,218 Q122,200 122,182 Q122,174 118,170 Z" ${m('hamstring-semi')}/>
+<!-- Ham separation line L -->
+<path d="M38,170 Q38,200 38,224" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
+<!-- Ham separation line R -->
+<path d="M122,170 Q122,200 122,224" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
+ 
+<!-- CALVES GASTRO L (two-headed) -->
+<path d="M30,228 Q26,240 26,258 Q28,266 33,268 Q38,266 40,256 Q42,244 40,232 Q36,226 32,226 Z" ${m('calves-gastro')}/>
+<!-- CALVES GASTRO R -->
+<path d="M130,228 Q134,240 134,258 Q132,266 127,268 Q122,266 120,256 Q118,244 120,232 Q124,226 128,226 Z" ${m('calves-gastro')}/>
+<!-- Gastro center split L -->
+<path d="M35,228 Q35,248 35,264" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
+<!-- Gastro center split R -->
+<path d="M125,228 Q125,248 125,264" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="0.5"/>
+<!-- SOLEUS L -->
+<path d="M40,236 Q44,246 44,260 Q42,268 38,268 Q36,262 36,252 Q36,240 38,234 Z" ${m('calves-soleus')}/>
+<!-- SOLEUS R -->
+<path d="M120,236 Q116,246 116,260 Q118,268 122,268 Q124,262 124,252 Q124,240 122,234 Z" ${m('calves-soleus')}/>
+<!-- Achilles tendon L -->
+<path d="M35,256 L35,272" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+<!-- Achilles tendon R -->
+<path d="M125,256 L125,272" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
 </svg>`;
 }
-
+ 
 // ═══════════════════════════════════════════════════════════════════════════
 // BMI
 // ═══════════════════════════════════════════════════════════════════════════
@@ -1390,7 +1653,7 @@ function calcBmiValue(){
   else{cat='Obese';range='30 and above';}
   return{value:bmi.toFixed(1),bmi,category:cat,range};
 }
-
+ 
 function loadBmiForm(){
   const b=S.bmi;
   ['name','age','gender','weight','height'].forEach(k=>{const el=document.getElementById('b-'+k[0]+(k==='name'?'ame':k==='age'?'ge':k==='gender'?'ender':k==='weight'?'':k==='height'?'':'')); });
@@ -1446,7 +1709,7 @@ function calcBmi(){
       <div style="font-size:15px;font-weight:700;color:var(--g1);">${Math.round(wt*g.f)} ${u}</div>
     </div>`).join('')}`;
 }
-
+ 
 // ═══════════════════════════════════════════════════════════════════════════
 // PROGRESS
 // ═══════════════════════════════════════════════════════════════════════════
@@ -1455,7 +1718,7 @@ function renderProgress(){
   document.getElementById('p-tot').textContent=all.length;
   const wd=weekDays(),doneWk=wd.filter(d=>(S.completedDates[d]||[]).length>0).length;
   document.getElementById('p-con').textContent=Math.round((doneWk/7)*100)+'%';
-
+ 
   const cal=document.getElementById('cal-grid');cal.innerHTML='';
   for(let i=29;i>=0;i--){
     const d=new Date();d.setDate(d.getDate()-i);
@@ -1465,7 +1728,7 @@ function renderProgress(){
     cell.style.cssText=`aspect-ratio:1;border-radius:4px;background:${done?'var(--g1)':isT?'rgba(255,107,53,0.12)':'var(--bg3)'};border:${isT&&!done?'1px solid rgba(255,107,53,0.4)':'none'};`;
     cal.appendChild(cell);
   }
-
+ 
   const unit=S.bmi.unit==='metric'?'kg':'lb';
   const pl=document.getElementById('prog-list');pl.innerHTML='';
   const wh=EXERCISES.filter(e=>(S.exerciseHistory[e.id]||[]).length>0);
@@ -1482,12 +1745,12 @@ function renderProgress(){
     pl.appendChild(div);
   });
 }
-
+ 
 // ═══════════════════════════════════════════════════════════════════════════
 // MODALS
 // ═══════════════════════════════════════════════════════════════════════════
 function closeOv(name){document.getElementById('ov-'+name).style.display='none';}
-
+ 
 // ═══════════════════════════════════════════════════════════════════════════
 // SERVICE WORKER
 // ═══════════════════════════════════════════════════════════════════════════
@@ -1496,7 +1759,7 @@ if('serviceWorker' in navigator){
     navigator.serviceWorker.register('./sw.js').catch(() => {});
   });
 }
-
+ 
 // ═══════════════════════════════════════════════════════════════════════════
 // INIT
 // ═══════════════════════════════════════════════════════════════════════════
