@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="FitTrack">
@@ -12,8 +12,52 @@
   /* Hide when not in standalone — show install prompt instead */
   #app { display: none; }
   #install-prompt { display: flex; }
+ 
+  /* Portrait lock — hide everything and show rotation warning in landscape */
+  @media screen and (orientation: landscape) {
+    #app, #install-prompt { display: none !important; }
+    #rotate-msg { display: flex !important; }
+  }
+  #rotate-msg {
+    display: none;
+    position: fixed; inset: 0; z-index: 99999;
+    background: #0d0d0d;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: -apple-system, sans-serif;
+    color: #f0f0f0;
+    text-align: center;
+    padding: 32px;
+    gap: 16px;
+  }
 </style>
 <script>
+  // Portrait lock — try native API first, CSS media query as fallback
+  if (screen.orientation && screen.orientation.lock) {
+    screen.orientation.lock('portrait').catch(function(){});
+  }
+ 
+  // If rotated back to portrait and zoom is stuck, force reset
+  window.addEventListener('orientationchange', function() {
+    setTimeout(function() {
+      var mv = document.querySelector('meta[name=viewport]');
+      if (mv) {
+        mv.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover');
+      }
+    }, 300);
+  });
+ 
+  // Also reset on resize (catches the zoom-stuck bug after rotation)
+  window.addEventListener('resize', function() {
+    if (window.innerWidth === screen.width || window.innerWidth === screen.height) {
+      var mv = document.querySelector('meta[name=viewport]');
+      if (mv) {
+        mv.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover');
+      }
+    }
+  });
+ 
   // If running as installed PWA (standalone), show app and hide prompt
   if (window.navigator.standalone === true) {
     document.addEventListener('DOMContentLoaded', function() {
@@ -166,6 +210,13 @@ html,body{height:100%;background:var(--bg);font-family:-apple-system,'SF Pro Tex
 </style>
 </head>
 <body>
+ 
+<!-- ROTATE WARNING — shown via CSS when device is landscape -->
+<div id="rotate-msg">
+  <div style="font-size:52px;">🔄</div>
+  <div style="font-size:20px;font-weight:700;">Rotate your phone</div>
+  <div style="font-size:14px;color:#666;line-height:1.5;">FitTrack is designed<br>for portrait mode</div>
+</div>
  
 <!-- INSTALL PROMPT — only shown when opened in browser (not standalone) -->
 <div id="install-prompt" style="display:none;position:fixed;inset:0;background:#0d0d0d;flex-direction:column;align-items:center;justify-content:center;padding:32px;font-family:-apple-system,'SF Pro Text',sans-serif;color:#f0f0f0;text-align:center;z-index:9999;">
@@ -716,6 +767,67 @@ const EXERCISES = [
   {id:'ab-wheel',          name:'Ab Wheel Rollout',       group:'Core',      sub:'Abs',            eq:EQ.BW,      diff:D.H, icon:'⚙️', type:'Isolation',  force:'Pull', mechanics:'Multi-Joint',
    primary:['lower-abs','upper-abs'],secondary:['serratus','lower-back'],
    desc:'Roll out until body parallel, pull back using abs not arms. Most demanding ab exercise.', base:0},
+ 
+  // ── CARDIO ──
+  {id:'treadmill-run',     name:'Treadmill Run',           group:'Cardio',    sub:'Steady State',   eq:EQ.MACHINE, diff:D.M, icon:'🏃', type:'Cardio',    force:'Push', mechanics:'Multi-Joint',
+   primary:['calves-gastro','quad-rectus'],secondary:['hamstring-bicep','glute-max','calves-soleus'],
+   desc:'Set a comfortable pace for steady-state cardio. Keep chest up, arms relaxed at 90°. Aim for 60-70% max heart rate for fat burn.', base:0},
+ 
+  {id:'treadmill-hiit',    name:'Treadmill HIIT',          group:'Cardio',    sub:'HIIT',           eq:EQ.MACHINE, diff:D.H, icon:'⚡', type:'Cardio',    force:'Push', mechanics:'Multi-Joint',
+   primary:['quad-rectus','calves-gastro'],secondary:['hamstring-bicep','glute-max','hip-flexors'],
+   desc:'Alternate 30s all-out sprint with 90s recovery walk. 8-10 rounds. Max effort on sprints. Proven fat-loss protocol.', base:0},
+ 
+  {id:'incline-treadmill', name:'Incline Treadmill Walk',  group:'Cardio',    sub:'Steady State',   eq:EQ.MACHINE, diff:D.E, icon:'⛰️', type:'Cardio',    force:'Push', mechanics:'Multi-Joint',
+   primary:['glute-max','calves-gastro'],secondary:['hamstring-bicep','quad-rectus'],
+   desc:'Set 10-15% incline, moderate pace. Do not hold the rails. Great low-impact cardio that hammers glutes and calves.', base:0},
+ 
+  {id:'cycling',           name:'Stationary Bike',         group:'Cardio',    sub:'Steady State',   eq:EQ.MACHINE, diff:D.E, icon:'🚴', type:'Cardio',    force:'Push', mechanics:'Multi-Joint',
+   primary:['quad-rectus','quad-vastus-l'],secondary:['glute-max','hamstring-bicep','calves-gastro'],
+   desc:'Low impact, high output. Seat height so knee slightly bent at bottom. Resistance should feel challenging but sustainable.', base:0},
+ 
+  {id:'cycling-hiit',      name:'Bike HIIT / Sprints',     group:'Cardio',    sub:'HIIT',           eq:EQ.MACHINE, diff:D.H, icon:'💥', type:'Cardio',    force:'Push', mechanics:'Multi-Joint',
+   primary:['quad-rectus','glute-max'],secondary:['hamstring-bicep','calves-gastro','quad-vastus-l'],
+   desc:'20s max-effort sprint, 40s easy pedal. 10 rounds. Increase resistance on sprints. Best bang-for-buck cardio session.', base:0},
+ 
+  {id:'rowing-machine',    name:'Rowing Machine',          group:'Cardio',    sub:'Full Body',      eq:EQ.MACHINE, diff:D.M, icon:'🚣', type:'Cardio',    force:'Pull', mechanics:'Multi-Joint',
+   primary:['lats-upper','rhomboids'],secondary:['hamstring-bicep','glute-max','bicep-long','lower-back'],
+   desc:'Legs-back-arms on pull, arms-back-legs on return. 60% legs, 20% core, 20% arms. The most complete cardio machine.', base:0},
+ 
+  {id:'stairmaster',       name:'StairMaster',             group:'Cardio',    sub:'Steady State',   eq:EQ.MACHINE, diff:D.M, icon:'🪜', type:'Cardio',    force:'Push', mechanics:'Multi-Joint',
+   primary:['glute-max','calves-gastro'],secondary:['quad-rectus','hamstring-bicep','glute-med'],
+   desc:'Do not lean on rails. Full step down each time. 20-30 mins steady is brutal. Best machine for glute + cardio combo.', base:0},
+ 
+  {id:'elliptical',        name:'Elliptical Trainer',      group:'Cardio',    sub:'Steady State',   eq:EQ.MACHINE, diff:D.E, icon:'🔄', type:'Cardio',    force:'Push', mechanics:'Multi-Joint',
+   primary:['quad-rectus','glute-max'],secondary:['hamstring-bicep','calves-gastro','upper-abs'],
+   desc:'Zero impact — great for recovery days or joint issues. Push and pull handles for upper body involvement. Keep resistance high.', base:0},
+ 
+  {id:'jump-rope',         name:'Jump Rope',               group:'Cardio',    sub:'HIIT',           eq:EQ.BW,      diff:D.M, icon:'🪢', type:'Cardio',    force:'Push', mechanics:'Multi-Joint',
+   primary:['calves-gastro','calves-soleus'],secondary:['quad-rectus','forearms','side-delt'],
+   desc:'Stay on balls of feet, small bounces. 30s on 30s off to start. Progress to double-unders. Incredible conditioning tool.', base:0},
+ 
+  {id:'box-jump',          name:'Box Jump',                group:'Cardio',    sub:'Plyometric',     eq:EQ.BW,      diff:D.M, icon:'📦', type:'Cardio',    force:'Push', mechanics:'Multi-Joint',
+   primary:['glute-max','quad-rectus'],secondary:['hamstring-bicep','calves-gastro','quad-vastus-l'],
+   desc:'Explosive jump onto box, land softly in squat position. Step down carefully. Builds power and spikes heart rate fast.', base:0},
+ 
+  {id:'battle-ropes',      name:'Battle Ropes',            group:'Cardio',    sub:'HIIT',           eq:EQ.BW,      diff:D.H, icon:'🌊', type:'Cardio',    force:'Push', mechanics:'Multi-Joint',
+   primary:['side-delt','front-delt'],secondary:['upper-abs','obliques','upper-traps','forearms'],
+   desc:'Alternating waves 30s on, 30s rest. Athletic stance, slight forward lean. Metabolic conditioning for upper body and core.', base:0},
+ 
+  {id:'sled-push',         name:'Sled Push / Pull',        group:'Cardio',    sub:'HIIT',           eq:EQ.BW,      diff:D.H, icon:'🛷', type:'Cardio',    force:'Push', mechanics:'Multi-Joint',
+   primary:['quad-rectus','glute-max'],secondary:['calves-gastro','lower-back','front-delt','tricep-long'],
+   desc:'Load the sled moderately, drive through with legs low and powerful. 20m down and back. Destroys legs and lungs equally.', base:0},
+ 
+  {id:'farmers-carry',     name:'Farmer\'s Carry',         group:'Cardio',    sub:'Functional',     eq:EQ.DB,      diff:D.E, icon:'🧳', type:'Cardio',    force:'Pull', mechanics:'Multi-Joint',
+   primary:['forearms','upper-traps'],secondary:['calves-gastro','lower-abs','obliques','lower-back'],
+   desc:'Heavy dumbbells, walk 30-50m. Stay tall, brace core, don\'t let shoulders shrug. Builds grip, traps, and conditioning.', base:0},
+ 
+  {id:'burpee',            name:'Burpee',                  group:'Cardio',    sub:'HIIT',           eq:EQ.BW,      diff:D.H, icon:'🌟', type:'Cardio',    force:'Push', mechanics:'Multi-Joint',
+   primary:['upper-abs','quad-rectus'],secondary:['front-delt','tricep-lateral','glute-max','calves-gastro'],
+   desc:'Drop to floor, push-up, jump up explosively. Scale by removing push-up or jump. 10 burpees = 100m sprint equivalent.', base:0},
+ 
+  {id:'assault-bike',      name:'Assault Bike',            group:'Cardio',    sub:'HIIT',           eq:EQ.MACHINE, diff:D.H, icon:'💀', type:'Cardio',    force:'Push', mechanics:'Multi-Joint',
+   primary:['quad-rectus','front-delt'],secondary:['glute-max','hamstring-bicep','tricep-long','calves-gastro'],
+   desc:'The devil\'s machine. 10s all-out / 50s rest x 10 rounds or Calories-for-time. Arms and legs together. Nothing burns more.', base:0},
 ];
  
 const GROUPS = ['All', ...new Set(EXERCISES.map(e=>e.group))];
